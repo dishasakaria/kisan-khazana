@@ -1,0 +1,149 @@
+[
+ {
+  "id": "s1",
+  "who": "narr",
+  "text": "फसल तो बढ़िया हुई… पर असली सवाल — कब बेचें, कहाँ बेचें?",
+  "subs": [
+   [
+    "फसल तो बढ़िया हुई…",
+    "The harvest is great…"
+   ],
+   [
+    "पर असली सवाल — कब बेचें, कहाँ बेचें?",
+    "but the real question: when to sell, and where?"
+   ]
+  ]
+ },
+ {
+  "id": "s2",
+  "who": "ramu",
+  "text": "कल लासलगाव में चार हज़ार था, आज पता नहीं… और ट्रक का किराया अलग। हाथ में बचेगा कितना?",
+  "subs": [
+   [
+    "कल लासलगाव में चार हज़ार था, आज पता नहीं…",
+    "Yesterday Lasalgaon paid ₹4,000 — today, who knows…"
+   ],
+   [
+    "और ट्रक का किराया अलग। हाथ में बचेगा कितना?",
+    "plus truck rent. How much will I actually keep?"
+   ]
+  ]
+ },
+ {
+  "id": "s3",
+  "who": "shamu",
+  "text": "अरे रामू भाऊ! इतना टेंशन क्यों? मैं तो अब सेल स्मार्ट से पूछता हूँ!",
+  "subs": [
+   [
+    "अरे रामू भाऊ! इतना टेंशन क्यों?",
+    "Hey Ramu bhau! Why so worried?"
+   ],
+   [
+    "मैं तो अब सेल स्मार्ट से पूछता हूँ!",
+    "I just ask Sell Smart now!"
+   ]
+  ]
+ },
+ {
+  "id": "s4",
+  "who": "shamu",
+  "text": "टेलीग्राम पे लिखो, एस एम एस भेजो, या सीधा फ़ोन करो — मराठी, हिंदी, इंग्लिश, सब चलेगा। स्मार्टफ़ोन न हो तो भी!",
+  "subs": [
+   [
+    "टेलीग्राम पे लिखो, SMS भेजो, या सीधा फ़ोन करो —",
+    "Type on Telegram, send an SMS, or just call —"
+   ],
+   [
+    "मराठी, हिंदी, इंग्लिश, सब चलेगा।",
+    "Marathi, Hindi, English — all work."
+   ],
+   [
+    "स्मार्टफ़ोन न हो तो भी!",
+    "Even without a smartphone!"
+   ]
+  ]
+ },
+ {
+  "id": "s5",
+  "who": "shamu",
+  "text": "बस फसल और क्विंटल टेलीग्राम पर डालो… देखो! सबसे अच्छी मंडी, आज का भाव, ट्रक का भाड़ा, हमाली — सब घटा के, हाथ में कितना आएगा, साफ़-साफ़।",
+  "subs": [
+   [
+    "बस फसल और क्विंटल टेलीग्राम पर डालो… देखो!",
+    "Just put your crop and quintals on Telegram… see!"
+   ],
+   [
+    "सबसे अच्छी मंडी, आज का भाव, ट्रक का भाड़ा, हमाली —",
+    "Best mandi, today's price, truck rent, loading —"
+   ],
+   [
+    "सब घटा के, हाथ में कितना आएगा, साफ़-साफ़।",
+    "all deducted, exactly what you get in hand."
+   ]
+  ]
+ },
+ {
+  "id": "s6",
+  "who": "narr",
+  "text": "रुकना फ़ायदेमंद हो तो बताएगा — और भाव गिरा तो कितना मिल सकता है, वो भी। पूरा हिसाब। फ़ैसला आपका।",
+  "subs": [
+   [
+    "रुकना फ़ायदेमंद हो तो बताएगा —",
+    "If waiting pays, it tells you —"
+   ],
+   [
+    "और भाव गिरा तो कितना मिल सकता है, वो भी।",
+    "and what you'd get if prices fall, too."
+   ],
+   [
+    "पूरा हिसाब। फ़ैसला आपका।",
+    "Full math. Your decision."
+   ]
+  ]
+ },
+ {
+  "id": "s7",
+  "who": "shamu",
+  "text": "गोदाम की फ़ोटो भेजो — माल कितने दिन टिकेगा बताएगा। पड़ोसी के साथ ट्रक शेयर करो — पैसा बचाओ। और अपना माल अपने FPO को दो — FPO बड़े व्यापारियों को 'किसान खज़ाना' ऐप पर बेचेगा, सिर्फ़ एक प्रतिशत फ़ीस।",
+  "subs": [
+   [
+    "गोदाम की फ़ोटो भेजो — माल कितने दिन टिकेगा बताएगा।",
+    "Send a photo of your stock — it tells you how long it keeps."
+   ],
+   [
+    "पड़ोसी के साथ ट्रक शेयर करो — पैसा बचाओ।",
+    "Share a truck with neighbours — save money."
+   ],
+   [
+    "और अपना माल अपने FPO को दो —",
+    "And give your produce to your FPO —"
+   ],
+   [
+    "FPO बड़े व्यापारियों को 'किसान खज़ाना' ऐप पर बेचेगा, सिर्फ़ 1% फ़ीस।",
+    "the FPO sells to big buyers on the Kisaan Khazana app, just 1% fee."
+   ]
+  ]
+ },
+ {
+  "id": "s8a",
+  "who": "ramu",
+  "text": "अब पता है — कब, कहाँ, और हाथ में कितना!",
+  "subs": [
+   [
+    "अब पता है — कब, कहाँ, और हाथ में कितना!",
+    "Now I know — when, where, and how much in hand!"
+   ]
+  ]
+ },
+ {
+  "id": "s8b",
+  "who": "narr",
+  "text": "सेल स्मार्ट — सही बाज़ार, सही समय, पूरा हिसाब।",
+  "subs": [
+   [
+    "सेल स्मार्ट — सही बाज़ार, सही समय, पूरा हिसाब।",
+    "Sell Smart — right market, right time, full math."
+   ]
+  ]
+ }
+]

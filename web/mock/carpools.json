@@ -1,0 +1,152 @@
+[
+ {
+  "commodity": "Onion",
+  "mandi": "Sangamner",
+  "date": "2026-10-06",
+  "farmers": 3,
+  "total_qty_qtl": 48,
+  "km_span": 13.5,
+  "saving_rs": 1990.0,
+  "vehicle": "Eicher Pro (9 t)"
+ },
+ {
+  "commodity": "Onion",
+  "mandi": "Yeola",
+  "date": "2026-10-03",
+  "farmers": 3,
+  "total_qty_qtl": 36,
+  "km_span": 15.1,
+  "saving_rs": 1950.0,
+  "vehicle": "Tata 407 (4 t)"
+ },
+ {
+  "commodity": "Onion",
+  "mandi": "Pimpalgaon",
+  "date": "2026-10-06",
+  "farmers": 6,
+  "total_qty_qtl": 54,
+  "km_span": 13.3,
+  "saving_rs": 2180.0,
+  "vehicle": "Eicher Pro (9 t)"
+ },
+ {
+  "commodity": "Tomato",
+  "mandi": "Rahata",
+  "date": "2026-10-06",
+  "farmers": 3,
+  "total_qty_qtl": 33,
+  "km_span": 13.7,
+  "saving_rs": 1630.0,
+  "vehicle": "Tata 407 (4 t)"
+ },
+ {
+  "commodity": "Tomato",
+  "mandi": "Yeola",
+  "date": "2026-10-03",
+  "farmers": 5,
+  "total_qty_qtl": 95,
+  "km_span": 8.4,
+  "saving_rs": 5210.0,
+  "vehicle": "Eicher Pro (9 t)"
+ },
+ {
+  "commodity": "Tomato",
+  "mandi": "Kopargaon",
+  "date": "2026-10-03",
+  "farmers": 6,
+  "total_qty_qtl": 114,
+  "km_span": 16.1,
+  "saving_rs": 7970.0,
+  "vehicle": "Eicher Pro (9 t)"
+ },
+ {
+  "commodity": "Soyabean",
+  "mandi": "Kopargaon",
+  "date": "2026-10-08",
+  "farmers": 4,
+  "total_qty_qtl": 72,
+  "km_span": 9.7,
+  "saving_rs": 4890.0,
+  "vehicle": "Eicher Pro (9 t)"
+ },
+ {
+  "commodity": "Soyabean",
+  "mandi": "Ahmednagar",
+  "date": "2026-10-03",
+  "farmers": 4,
+  "total_qty_qtl": 76,
+  "km_span": 15.5,
+  "saving_rs": 3740.0,
+  "vehicle": "Eicher Pro (9 t)"
+ },
+ {
+  "commodity": "Soyabean",
+  "mandi": "Kopargaon",
+  "date": "2026-10-04",
+  "farmers": 6,
+  "total_qty_qtl": 66,
+  "km_span": 4.2,
+  "saving_rs": 3580.0,
+  "vehicle": "Eicher Pro (9 t)"
+ },
+ {
+  "commodity": "Wheat",
+  "mandi": "Ahmednagar",
+  "date": "2026-10-08",
+  "farmers": 3,
+  "total_qty_qtl": 51,
+  "km_span": 11.1,
+  "saving_rs": 2050.0,
+  "vehicle": "Eicher Pro (9 t)"
+ },
+ {
+  "commodity": "Wheat",
+  "mandi": "Yeola",
+  "date": "2026-10-04",
+  "farmers": 4,
+  "total_qty_qtl": 88,
+  "km_span": 17.0,
+  "saving_rs": 3420.0,
+  "vehicle": "Eicher Pro (9 t)"
+ },
+ {
+  "commodity": "Wheat",
+  "mandi": "Junnar (Narayangaon)",
+  "date": "2026-10-04",
+  "farmers": 4,
+  "total_qty_qtl": 60,
+  "km_span": 15.7,
+  "saving_rs": 2190.0,
+  "vehicle": "Eicher Pro (9 t)"
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "mandi": "Junnar (Narayangaon)",
+  "date": "2026-10-07",
+  "farmers": 5,
+  "total_qty_qtl": 35,
+  "km_span": 17.0,
+  "saving_rs": 1700.0,
+  "vehicle": "Tata 407 (4 t)"
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "mandi": "Manmad",
+  "date": "2026-10-07",
+  "farmers": 4,
+  "total_qty_qtl": 52,
+  "km_span": 9.7,
+  "saving_rs": 3360.0,
+  "vehicle": "Eicher Pro (9 t)"
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "mandi": "Junnar (Narayangaon)",
+  "date": "2026-10-03",
+  "farmers": 4,
+  "total_qty_qtl": 48,
+  "km_span": 9.6,
+  "saving_rs": 2550.0,
+  "vehicle": "Eicher Pro (9 t)"
+ }
+]

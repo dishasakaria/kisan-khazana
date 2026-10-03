@@ -1,0 +1,58 @@
+{
+ "features": [
+  "ret_1",
+  "ret_7",
+  "ret_14",
+  "ret_28",
+  "dev_ma7",
+  "dev_ma30",
+  "vol_30",
+  "yoy",
+  "gap_crop",
+  "crop_ret_7",
+  "season_sin",
+  "season_cos",
+  "dow",
+  "days_to_diwali",
+  "rain_7",
+  "rain_30",
+  "rain_next_7",
+  "tmax_7",
+  "commodity",
+  "market"
+ ],
+ "horizons": [
+  7,
+  14,
+  21
+ ],
+ "quantiles": [
+  0.1,
+  0.5,
+  0.9
+ ],
+ "results": {
+  "7": {
+   "model": 15.629944366736693,
+   "same_price": 17.46169625751987,
+   "past_years": 21.991617249419136,
+   "coverage_10_90": 78.86259693776098,
+   "test_rows": 95551
+  },
+  "14": {
+   "model": 18.874139248705923,
+   "same_price": 21.09681582496036,
+   "past_years": 26.388014270651013,
+   "coverage_10_90": 78.44252269264608,
+   "test_rows": 93202
+  },
+  "21": {
+   "model": 20.92769036078412,
+   "same_price": 23.6655759734527,
+   "past_years": 29.080693296343807,
+   "coverage_10_90": 77.95706064630367,
+   "test_rows": 90360
+  }
+ },
+ "engine": "lightgbm"
+}

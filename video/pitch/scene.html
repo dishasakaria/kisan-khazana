@@ -1,0 +1,585 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sell Smart pitch</title>
+<!-- Frame-exact 1920x1080 pitch scene: record.js calls setup(sceneDurations, clips) then seek(t) per frame. -->
+<style>
+@font-face{font-family:Deva;src:url(../NotoSansDevanagari.ttf);font-weight:100 900}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#8fd3f4}
+body{font-family:Deva,"Liberation Sans","DejaVu Sans",sans-serif,"Noto Color Emoji";color:#1d2b20;position:relative}
+svg text{font-family:Deva,"Liberation Sans",sans-serif,"Noto Color Emoji"}
+#world{position:absolute;inset:0}
+.card{position:absolute;background:#fff;border-radius:30px;box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden}
+.card h3{font-size:34px;line-height:1.3;padding:22px 30px 4px;color:#1b5e20}
+.card .sub{font-size:23px;color:#5f6b62;padding:0 30px;line-height:1.35}
+#phone{position:absolute;left:1310px;top:34px;width:470px;height:812px;background:#15181c;border-radius:58px;padding:14px;box-shadow:0 24px 70px rgba(0,0,0,.45)}
+#scr{width:100%;height:100%;border-radius:46px;overflow:hidden;display:flex;flex-direction:column;background:#cfe1b9}
+#sbar{height:34px;flex:none;background:#3f6d93;color:#fff;font:600 17px "Liberation Sans";display:flex;justify-content:space-between;align-items:flex-end;padding:0 34px 2px}
+#hdr{height:70px;flex:none;background:#517da2;color:#fff;display:flex;align-items:center;gap:12px;padding:0 18px}
+.av{width:46px;height:46px;border-radius:50%;background:#2e7d32;color:#fff;font:800 19px "Liberation Sans";display:flex;align-items:center;justify-content:center;flex:none}
+#hdr b{font-size:23px;display:block;line-height:1.1}#hdr small{font-size:16px;opacity:.85}
+#chat{flex:1;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:9px;padding:12px;
+ background:radial-gradient(circle at 20% 30%,#d9e8c3 0 7%,transparent 8%),radial-gradient(circle at 70% 75%,#d9e8c3 0 5%,transparent 6%),#cfe1b9;background-size:110px 110px}
+.b{max-width:92%;padding:9px 14px;border-radius:16px;border-bottom-left-radius:5px;font-size:22px;line-height:1.42;background:#fff;align-self:flex-start;box-shadow:0 1px 1px rgba(0,0,0,.15)}
+.b.me{background:#e1fec6;align-self:flex-end;border-radius:16px;border-bottom-right-radius:5px;font-weight:600}
+.kb{display:grid;grid-template-columns:1fr 1fr;gap:6px;align-self:stretch}
+.kb div{background:rgba(255,255,255,.92);border-radius:11px;text-align:center;padding:7px 2px;font-size:21px;font-weight:700;color:#2a5885;box-shadow:0 1px 2px rgba(0,0,0,.18)}
+.kb.c3{grid-template-columns:1fr 1fr 1fr}
+.pressed{background:#ffe082!important;transform:scale(.94)}
+.adv{width:92%;max-width:92%}
+.adv .l{display:block}.adv .best{font-weight:800;color:#1b5e20}.adv .mu{color:#455a4b}
+.gold{display:block;margin:6px -4px 2px;background:linear-gradient(135deg,#ffe082,#ffca28);border:2px solid #f9a825;border-radius:12px;padding:6px 10px;font-weight:800;font-size:27px;color:#3e2c00}
+.ybadge{display:inline-block;background:#fff3c4;border:2px solid #f9c825;color:#6d4c00;border-radius:30px;padding:2px 14px;font-weight:800}
+#inp{height:62px;flex:none;background:#fff;display:flex;align-items:center;gap:12px;padding:0 20px;font-size:21px;color:#9aa5ad;border-top:1px solid #ddd}
+#inp span:last-child{margin-left:auto;width:42px;height:42px;border-radius:50%;background:#517da2;color:#fff;display:flex;align-items:center;justify-content:center}
+#map,#chart{left:690px;top:110px;width:560px;height:640px}
+#dim{position:absolute;inset:0;background:rgba(10,32,20,.93)}
+.mc{top:100px;width:560px;height:720px}
+.mc .big{font-size:30px;font-weight:800;padding:6px 30px;line-height:1.35}
+.pill{display:inline-block;border-radius:40px;padding:4px 18px;font-weight:800}
+#subs{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);max-width:1720px;background:rgba(12,30,18,.80);color:#fff;border-radius:22px;padding:12px 36px 14px;text-align:center;white-space:nowrap}
+#subs .hi{font-size:44px;font-weight:600;line-height:1.45}
+#subs .en{font-size:28px;color:#ffe28a;line-height:1.3}
+#subs .who{display:inline-block;font-size:24px;font-weight:800;border-radius:20px;padding:0 14px;margin-right:16px;vertical-align:6px;line-height:1.6}
+#end{position:absolute;inset:0;background:radial-gradient(circle at 50% 35%,#2e7d32,#123d1c 75%);color:#fff;display:flex;flex-direction:column;align-items:center;padding-top:110px;gap:18px;text-align:center}
+#end .name{font:800 150px/1 "Liberation Sans",sans-serif;letter-spacing:-2px}
+#end .tag{font-size:50px;font-weight:700}
+#end .tagen{font-size:30px;color:#c8e6c9;margin-top:-10px}
+#end .ch2{background:rgba(255,255,255,.16);color:#fff;border-radius:60px;padding:8px 36px;font-size:30px;font-weight:700}
+#end .ch{margin-top:26px;background:#fff;color:#1b5e20;border-radius:60px;padding:14px 44px;font-size:38px;font-weight:800}
+#finger{position:absolute;left:0;top:0;font-size:86px;line-height:1;pointer-events:none;transform-origin:30% 5%}
+</style></head><body>
+<svg id="world" viewBox="0 0 1920 1080" width="1920" height="1080"></svg>
+<div id="map" class="card"></div>
+<div id="chart" class="card"></div>
+<div id="phone"><div id="scr">
+  <div id="sbar"><span>9:41</span><span>4G ▮▮▮</span></div>
+  <div id="hdr"><div class="av">SS</div><div><b>Sell Smart</b><small>bot · @SellSmartKisanBot</small></div></div>
+  <div id="chat"></div>
+  <div id="inp"><span>☺</span><span>संदेश</span><span>➤</span></div>
+</div></div>
+<div id="dim"></div>
+<div id="m1" class="card mc" style="left:90px"></div>
+<div id="m2" class="card mc" style="left:680px"></div>
+<div id="m3" class="card mc" style="left:1270px"></div>
+<div id="end"></div>
+<div id="subs"></div>
+<div id="finger">👆</div>
+<script>
+const $ = id => document.getElementById(id);
+const cl = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x)), lerp = (a, b, p) => a + (b - a) * p;
+const seg = (t, a, b) => cl((t - a) / (b - a));
+const eio = p => p < .5 ? 2 * p * p : 1 - (-2 * p + 2) ** 2 / 2, eout = p => 1 - (1 - p) ** 3;
+const back = p => p <= 0 ? 0 : p >= 1 ? 1 : 1 + 2.7 * (p - 1) ** 3 + 1.7 * (p - 1) ** 2;
+const R = (th, L) => [-L * Math.sin(th * Math.PI / 180), L * Math.cos(th * Math.PI / 180)];
+const attr = (el, k, v) => el.setAttribute(k, v);
+let S = [], D = [], CL = [], SUBS = [], ANIM = [], BUB = [];
+
+/* ---------------- world: background ---------------- */
+function house(x, y, s, wall, roof) {
+  return `<g transform="translate(${x},${y}) scale(${s})"><rect x="-40" y="-46" width="80" height="46" fill="${wall}"/>
+  <path d="M-50,-44 L0,-80 L50,-44Z" fill="${roof}"/><rect x="-8" y="-28" width="16" height="28" fill="#6d4c41"/>
+  <rect x="-30" y="-34" width="12" height="12" fill="#5d7f99"/><rect x="18" y="-34" width="12" height="12" fill="#5d7f99"/></g>`;
+}
+function tree(x, y, s, c = "#4f8f3a") {
+  return `<g transform="translate(${x},${y}) scale(${s})"><path d="M-8,0 L-5,-90 L5,-90 L8,0Z" fill="#6d4c41"/>
+  <circle cx="0" cy="-120" r="55" fill="${c}"/><circle cx="-45" cy="-95" r="38" fill="${c}"/><circle cx="45" cy="-98" r="40" fill="${c}"/>
+  <circle cx="-15" cy="-140" r="30" fill="#ffffff" opacity=".08"/></g>`;
+}
+function sack(x, y, s = 1, rot = 0) {
+  return `<g transform="translate(${x},${y}) rotate(${rot}) scale(${s})">
+  <path d="M-48,0 Q-60,-50 -40,-92 Q-20,-104 0,-100 Q20,-104 40,-92 Q60,-50 48,0 Q0,10 -48,0Z" fill="#c9a46a"/>
+  <path d="M-48,0 Q-60,-50 -40,-92 Q-36,-50 -30,0Z" fill="#b08a52"/>
+  <path d="M-36,-70 Q0,-62 36,-70 M-42,-40 Q0,-32 42,-40" stroke="#a88452" stroke-width="3" fill="none" opacity=".7"/>
+  <circle cx="-14" cy="-98" r="13" fill="#a8455c"/><circle cx="10" cy="-102" r="14" fill="#b9506a"/><circle cx="24" cy="-94" r="11" fill="#9c3d54"/>
+  <path d="M10,-116 l2,-10" stroke="#7cb342" stroke-width="3"/><circle cx="6" cy="-106" r="4" fill="#fff" opacity=".35"/></g>`;
+}
+function truck(id, big = 1) {   // side view facing right, origin = ground under rear of bed
+  return `<g id="${id}"><g transform="scale(${big})">
+  <rect x="0" y="-205" width="300" height="140" rx="8" fill="#2e7d32"/><rect x="0" y="-205" width="300" height="18" fill="#ffca28"/>
+  <rect x="0" y="-110" width="300" height="12" fill="#c62828"/>
+  <text x="150" y="-128" text-anchor="middle" font-size="22" font-weight="800" fill="#fff">HORN OK PLEASE</text>
+  <path d="M300,-75 L300,-235 Q300,-250 316,-250 L380,-250 Q398,-250 408,-232 L440,-150 L440,-75Z" fill="#f2a33a"/>
+  <path d="M318,-232 L378,-232 Q388,-232 394,-220 L414,-170 L318,-170Z" fill="#cfe8f5"/>
+  <rect x="-10" y="-80" width="455" height="18" rx="6" fill="#37474f"/>
+  ${[60, 200, 380].map(x => `<circle cx="${x}" cy="-40" r="40" fill="#263238"/><circle cx="${x}" cy="-40" r="16" fill="#90a4ae"/>`).join("")}
+  </g></g>`;
+}
+function fields() {
+  const VP = [960, 300], ys = [548, 572, 610, 672, 770, 860], cols = ["#7cb342", "#9ccc65", "#c5e1a5", "#d7c98f", "#689f38", "#aed581", "#8bc34a"];
+  let o = "", k = 0;
+  const X = (xb, y) => VP[0] + (xb - VP[0]) * (y - VP[1]) / (1080 - VP[1]);
+  for (let r = 0; r < ys.length - 1; r++) for (let xb = -4200; xb < 6000; xb += 900) {
+    const a = ys[r], b = ys[r + 1], off = (r % 2) * 420, x0 = xb + off, x1 = x0 + 900, c = cols[(k++ * 5 + r) % cols.length];
+    o += `<path d="M${X(x0, a)},${a} L${X(x1, a)},${a} L${X(x1, b)},${b} L${X(x0, b)},${b}Z" fill="${c}" stroke="#6f9a3e" stroke-width="2" stroke-opacity=".35"/>`;
+    if ((k + r) % 3) for (let q = 1; q < 6; q++) { const xr = x0 + q * 150; o += `<path d="M${X(xr, a)},${a} L${X(xr, b)},${b}" stroke="#4e7d2c" stroke-width="${1 + r * .6}" opacity=".35"/>`; }
+  }
+  return o;
+}
+function background() {
+  return `<defs>
+   <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5fb8ea"/><stop offset=".7" stop-color="#bfe6f7"/><stop offset="1" stop-color="#fdf3d6"/></linearGradient>
+   <linearGradient id="duskg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b3a78"/><stop offset=".45" stop-color="#d9637a"/><stop offset=".8" stop-color="#fca65a"/><stop offset="1" stop-color="#ffd59a"/></linearGradient>
+   <radialGradient id="glow"><stop offset="0" stop-color="#fff7c2" stop-opacity=".9"/><stop offset="1" stop-color="#fff7c2" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect x="-1200" y="-600" width="4400" height="1200" fill="url(#sky)"/>
+  <rect id="dusk" x="-1200" y="-600" width="4400" height="1200" fill="url(#duskg)" opacity="0"/>
+  <g id="sun"><circle r="190" fill="url(#glow)"/><circle id="sunc" r="68" fill="#fff4b8"/></g>
+  <g id="clouds" fill="#fff" opacity=".9">${[[200, 150, 1], [900, 110, .8], [1500, 210, .7], [2300, 140, 1], [-300, 220, .8]].map(([x, y, s]) =>
+    `<g transform="translate(${x},${y}) scale(${s})"><ellipse rx="110" ry="34"/><ellipse cx="-40" cy="-22" rx="55" ry="38"/><ellipse cx="35" cy="-30" rx="62" ry="44"/></g>`).join("")}</g>
+  <path d="M-1200,560 L-1200,470 L-700,470 L-620,428 L-300,428 L-220,478 L120,478 L190,436 L600,436 L690,498 L880,498 L960,452 L1360,452 L1430,490 L1720,490 L1790,442 L2200,442 L2290,500 L3200,500 L3200,560Z" fill="#a3bfb6"/>
+  <path d="M-1200,570 Q-900,505 -500,540 Q-100,515 300,535 Q700,505 1100,540 Q1500,512 1900,536 Q2400,508 3200,540 L3200,600 L-1200,600Z" fill="#86b46e"/>
+  <rect x="-1200" y="546" width="4400" height="900" fill="#9ccc65"/>
+  ${fields()}
+  ${house(300, 552, .55, "#f3e0c0", "#c0583a")}${house(380, 556, .5, "#efe3cf", "#a84c34")}${house(1320, 552, .6, "#f6e7cb", "#c0583a")}${house(1420, 556, .5, "#eadcc4", "#b4523a")}
+  ${house(1530, 552, .58, "#f3e0c0", "#c0583a")}${house(2350, 552, .55, "#efe3cf", "#a84c34")}
+  <g transform="translate(1610,552) scale(.6)"><path d="M-30,0 L-30,-60 L0,-120 L30,-60 L30,0Z" fill="#f5e6c8"/><path d="M0,-120 L0,-160" stroke="#6d4c41" stroke-width="3"/><path d="M0,-160 L26,-150 L0,-140Z" fill="#ff8f00"/></g>
+  ${tree(220, 560, .5, "#5e9c45")}${tree(1250, 560, .45)}${tree(1720, 562, .55, "#5e9c45")}${tree(2500, 560, .5)}
+  <path d="M960,548 Q900,620 1020,700 Q1160,790 980,880 L1240,1100 L1500,1100 Q1320,900 1240,790 Q1100,680 990,548Z" fill="#dcc08f" opacity=".9"/>
+  <path d="M-1200,800 Q200,760 900,790 Q1700,770 3200,800 L3200,1400 L-1200,1400Z" fill="#d8b98a"/>
+  <path d="M-1200,800 Q200,760 900,790 Q1700,770 3200,800 L3200,815 Q1700,785 900,805 Q200,775 -1200,815Z" fill="#c4a274"/>
+  ${tree(120, 880, 1.6, "#4a8a35")}
+  ${sack(520, 880, 1.15, -4)}${sack(625, 884, 1.15, 3)}${sack(570, 790, 1.1, -2)}${sack(680, 800, 1.0, 5)}${sack(450, 892, 1.05, -6)}
+  <g id="seat" transform="translate(760,884) scale(1.75,1.08)">${sack(0, 0, 1)}</g>
+  ${truck("truck")}
+  <rect id="warm" x="-1200" y="380" width="4400" height="1400" fill="#ff7043" opacity="0"/>
+  <rect id="bgdim" x="-1200" y="-600" width="4400" height="2200" fill="#0c2416" opacity="0"/>`;
+}
+
+/* ---------------- world: characters ---------------- */
+const RAMU = { skin: "#b97a50", skinD: "#9c6340", kurta: "#f4f0e4", kurtaD: "#ddd6c2", vest: "#7b5a43", pants: "#f8f5ec", hair: "#2f2a27", ramu: 1 };
+const SHAMU = { skin: "#c98d60", skinD: "#a8714a", kurta: "#2a9d8f", kurtaD: "#21867a", pants: "#f1eee4", hair: "#1c1c1c" };
+function charSVG(id, c) {
+  const arm = side => { const k = side < 0 ? "L" : "R"; return `
+   <g id="${id}-ua${k}"><rect x="-16" y="-8" width="32" height="100" rx="16" fill="${c.kurta}"/>
+    <g id="${id}-fa${k}"><rect x="-14" y="-6" width="28" height="56" rx="14" fill="${c.kurta}"/><rect x="-11" y="36" width="22" height="42" rx="11" fill="${c.skin}"/>
+     <circle cx="0" cy="84" r="16" fill="${c.skin}"/></g></g>`; };
+  const leg = side => `<g id="${id}-lg${side < 0 ? "L" : "R"}">
+    <rect x="${side < 0 ? -46 : 4}" y="372" width="42" height="${c.ramu ? 180 : 215}" rx="18" fill="${c.pants}"/>
+    ${c.ramu ? `<rect x="${side < 0 ? -38 : 12}" y="540" width="26" height="48" rx="10" fill="${c.skin}"/><path d="M${side < 0 ? -40 : 10},400 l6,140" stroke="#e2dccb" stroke-width="3"/>` : ""}
+    <ellipse cx="${side * 27}" cy="592" rx="28" ry="10" fill="#4e342e"/></g>`;
+  const torso = c.ramu
+    ? `<path d="M-60,205 C-72,260 -78,380 -82,478 L82,478 C78,380 72,260 60,205 Q0,186 -60,205Z" fill="${c.kurta}"/>
+       <path d="M-60,206 C-70,270 -72,340 -70,410 L-14,410 L-8,214 Q-30,200 -60,206Z" fill="${c.vest}"/>
+       <path d="M60,206 C70,270 72,340 70,410 L14,410 L8,214 Q30,200 60,206Z" fill="${c.vest}"/>
+       <circle cx="-24" cy="300" r="4" fill="#d7c09a"/><circle cx="-24" cy="340" r="4" fill="#d7c09a"/>`
+    : `<path d="M-60,205 C-72,260 -80,390 -84,500 L84,500 C80,390 72,260 60,205 Q0,186 -60,205Z" fill="${c.kurta}"/>
+       <path d="M40,210 C56,280 62,400 64,500 L84,500 C80,390 72,260 60,205Z" fill="${c.kurtaD}"/>
+       <path d="M0,198 L0,300" stroke="${c.kurtaD}" stroke-width="4"/><circle cx="6" cy="232" r="3.5" fill="#e0f2f1"/><circle cx="6" cy="262" r="3.5" fill="#e0f2f1"/>
+       <path d="M-22,196 Q0,214 22,196" stroke="${c.kurtaD}" stroke-width="5" fill="none"/>`;
+  const hair = c.ramu
+    ? `<path d="M-55,104 Q-60,84 -52,74 L-46,100Z M55,104 Q60,84 52,74 L46,100Z" fill="#5a524c"/>
+       <path d="M-62,80 L62,80 L55,48 Q0,18 -55,48Z" fill="#ffffff"/><path d="M-60,73 L60,73" stroke="#e3e3e3" stroke-width="3"/>
+       <path d="M-48,54 Q0,36 48,54" stroke="#e6e6e6" stroke-width="3" fill="none"/>`
+    : `<path d="M-57,104 Q-62,40 -10,36 Q42,28 60,72 Q62,92 56,106 Q50,74 20,66 Q-22,62 -44,80 Q-53,90 -57,104Z" fill="${c.hair}"/>`;
+  const stache = c.ramu
+    ? `<path d="M-28,146 Q-14,134 0,141 Q14,134 28,146 Q24,152 14,150 Q6,147 0,148 Q-6,147 -14,150 Q-24,152 -28,146Z" fill="#2d2420"/><path d="M-20,143 Q-12,139 -6,141" stroke="#7d7470" stroke-width="2"/>`
+    : `<path d="M-18,144 Q0,137 18,144 Q0,142 -18,144Z" fill="#1c1c1c" opacity=".85"/>`;
+  return `<g id="${id}"><ellipse cx="0" cy="598" rx="${c.ramu ? 92 : 86}" ry="14" fill="#000" opacity=".16"/>
+   <g id="${id}-legs">${leg(-1)}${leg(1)}</g>
+   <g id="${id}-up">${torso}<rect x="-15" y="160" width="30" height="46" fill="${c.skinD}"/>
+    <g id="${id}-head">
+     <ellipse cx="-54" cy="120" rx="10" ry="16" fill="${c.skinD}"/><ellipse cx="54" cy="120" rx="10" ry="16" fill="${c.skinD}"/>
+     <ellipse cx="0" cy="112" rx="54" ry="64" fill="${c.skin}"/>${hair}
+     ${c.ramu ? `<path d="M-24,128 Q-32,144 -28,160 M24,128 Q32,144 28,160" stroke="${c.skinD}" stroke-width="2.5" fill="none" opacity=".6"/>` : ""}
+     <circle id="${id}-blushL" cx="-34" cy="140" r="11" fill="#e57373" opacity="0"/><circle id="${id}-blushR" cx="34" cy="140" r="11" fill="#e57373" opacity="0"/>
+     <g id="${id}-eyes"><ellipse cx="-20" cy="113" rx="6.5" ry="7.5" fill="#2b1d16"/><ellipse cx="20" cy="113" rx="6.5" ry="7.5" fill="#2b1d16"/>
+      <circle cx="-18" cy="110" r="2" fill="#fff"/><circle cx="22" cy="110" r="2" fill="#fff"/></g>
+     <path id="${id}-brow" stroke="${c.ramu ? "#3d3633" : c.hair}" stroke-width="6" stroke-linecap="round" fill="none"/>
+     <path d="M-2,118 Q-9,134 0,138 Q6,139 9,134" stroke="${c.skinD}" stroke-width="3" fill="none" stroke-linecap="round"/>
+     <path id="${id}-mouth" fill="#7a2e2e" stroke="#7a2e2e" stroke-width="3.5" stroke-linejoin="round"/>${stache}
+    </g>
+    ${arm(-1)}${arm(1)}<g id="${id}-prop"></g>
+   </g></g>`;
+}
+const PHONE = `<g transform="translate(0,-26)"><rect x="-20" y="-36" width="40" height="70" rx="7" fill="#212121"/><rect x="-16" y="-29" width="32" height="52" rx="3" fill="#6fb6e8"/>
+  <circle cx="0" cy="-4" r="9" fill="#fff"/><path d="M-5,-4 L5,-8 L2,1Z" fill="#29a9eb"/></g>`;
+const NOTE = `<g transform="translate(14,-20) rotate(-8)"><rect x="-42" y="-30" width="84" height="60" rx="4" fill="#fff8e1" stroke="#c9b27c" stroke-width="2"/>
+  <path d="M-32,-14 h50 M-32,0 h40 M-32,14 h56" stroke="#90a4ae" stroke-width="2"/><path d="M10,-20 l14,14 M24,-20 l-14,14" stroke="#e53935" stroke-width="3"/>
+  <text x="-8" y="10" font-size="16" fill="#e53935" font-weight="800">₹?</text></g>`;
+const SACK1 = sack(0, 0, .8);
+
+function pose(id, p, t) {
+  const g = n => $(id + n);
+  const sitDy = p.sit * 82, bob = p.bob || 0;
+  attr($(id), "transform", `translate(${p.x},${p.y}) rotate(${p.lean || 0}) scale(${p.s}) translate(0,-600)`);
+  attr(g("-legs"), "transform", `translate(0,600) scale(1,${1 - .4 * p.sit}) translate(0,-600)`);
+  attr(g("-lgL"), "transform", `rotate(${p.lg[0] + p.sit * 14},-25,380)`); attr(g("-lgR"), "transform", `rotate(${p.lg[1] - p.sit * 14},25,380)`);
+  attr(g("-up"), "transform", `translate(0,${sitDy - bob})`);
+  attr(g("-head"), "transform", `rotate(${p.head || 0},0,175)`);
+  for (const [k, sx, i] of [["L", -60, 0], ["R", 60, 1]]) {
+    attr(g("-ua" + k), "transform", `translate(${sx},215) rotate(${p.ua[i]})`); attr(g("-fa" + k), "transform", `translate(0,85) rotate(${p.fa[i]})`);
+  }
+  const m = p.mood, o = p.open || 0, w = 17 + 5 * Math.max(0, m), cy = 156, c = cy - 5 * m;
+  attr(g("-mouth"), "d", `M${-w},${c} Q0,${cy + 4 * m - 3 * o} ${w},${c} Q0,${cy + 5 * m + 20 * o} ${-w},${c}Z`);
+  const wo = Math.max(0, -m), ha = Math.max(0, m);
+  attr(g("-brow"), "d", `M-36,${94 + 2 * wo - 3 * ha} Q-24,${89 - 3 * ha - wo} -10,${95 - 10 * wo - 2 * ha} M36,${94 + 2 * wo - 3 * ha} Q24,${89 - 3 * ha - wo} 10,${95 - 10 * wo - 2 * ha}`);
+  g("-blushL").setAttribute("opacity", .35 * ha); g("-blushR").setAttribute("opacity", .35 * ha);
+  const ph = (t + (id === "ramu" ? 0 : 1.3)) % 3.9, bl = ph < .14 ? .12 : 1;
+  attr(g("-eyes"), "transform", `translate(0,113) scale(1,${bl}) translate(0,-113)`);
+  const side = p.propSide === "L" ? 0 : 1, sx = side ? 60 : -60, e = R(p.ua[side], 85), h = R(p.ua[side] + p.fa[side], 84);
+  g("-prop").innerHTML = p.prop || "";
+  attr(g("-prop"), "transform", `translate(${sx + e[0] + h[0]},${215 + e[1] + h[1]})`);
+}
+function walk(p, t, amt) {   // overlay a walk cycle on a pose
+  const s = Math.sin(t * 9) * amt;
+  p.lg = [22 * s, -22 * s]; p.bob = Math.abs(Math.sin(t * 9)) * 7 * amt; return p;
+}
+const talk = (who, t) => { for (const c of CL) if (c.who === who && t >= c.start && t < c.start + c.dur) {
+  const k = (t - c.start) * 25, i = Math.floor(k), f = k - i, e = c.env; return lerp(e[i] || 0, e[i + 1] || 0, f); } return 0; };
+
+/* ---------------- HTML building helpers ---------------- */
+function el(html, parent, tin, tout = 1e9, kind = "up", layout = true) {
+  const d = document.createElement("div"); d.innerHTML = html.trim(); const n = d.firstChild; parent.appendChild(n);
+  ANIM.push({ n, tin, tout, kind, layout }); return n;
+}
+function applyAnim(t) {
+  for (const a of ANIM) {
+    const p = seg(t, a.tin, a.tin + .45), q = seg(t, a.tout, a.tout + .35);
+    const vis = t >= a.tin && t < a.tout + .35;
+    if (a.layout) a.n.style.display = vis ? "" : "none";
+    a.n.style.opacity = vis ? eout(p) * (1 - q) : 0;
+    a.n.style.transform = a.kind === "pop" ? `scale(${.6 + .4 * back(p)})` : a.kind === "up" ? `translateY(${(1 - eout(p)) * 24}px)` :
+      a.kind === "left" ? `translateX(${(1 - eout(p)) * -24}px)` : "";
+  }
+}
+const ck = (clipIdx, chunk) => SUBS.find(s => s.clip === clipIdx && s.k === chunk).t0;   // absolute start time of a subtitle chunk
+
+/* ---------------- setup ---------------- */
+function setup(durs, clips) {
+  D = durs; CL = clips; let a = 0; S = D.map(d => (a += d) - d);
+  for (const [ci, c] of clips.entries()) {
+    const n = c.subs.map(s => s[0].replace(/\s/g, "").length), tot = n.reduce((x, y) => x + y, 0); let acc = 0;
+    c.subs.forEach((s, k) => { SUBS.push({ clip: ci, k, who: c.who, hi: s[0], en: s[1], t0: c.start + c.dur * acc / tot,
+      t1: k === c.subs.length - 1 ? c.start + c.dur + .5 : c.start + c.dur * (acc + n[k]) / tot }); acc += n[k]; });
+  }
+  const W = $("world");
+  W.innerHTML = `<g id="cam">${background()}
+    <g id="bubbles"></g>${charSVG("ramu", RAMU)}${charSVG("shamu", SHAMU)}<g id="icons"></g><g id="flying"></g></g>`;
+  // S1 thought bubbles (world coords)
+  BUB = [[860, 410, 66, 50, "₹?", 54], [1110, 300, 140, 56, "लासलगाव?", 40], [1250, 455, 170, 56, "ट्रक का भाड़ा?", 38]];
+  $("bubbles").innerHTML = BUB.map(([x, y, rx, ry, txt, fs], i) => `<g id="bub${i}" transform="translate(${x},${y})">
+    <circle cx="${-rx * .7}" cy="${ry + 26}" r="9" fill="#fff"/><circle cx="${-rx * .85}" cy="${ry + 50}" r="6" fill="#fff"/>
+    <rect x="${-rx}" y="${-ry}" width="${2 * rx}" height="${2 * ry}" rx="${ry}" fill="#fff" stroke="#b0bec5" stroke-width="3"/>
+    <text y="${fs * .36}" text-anchor="middle" font-size="${fs}" font-weight="800" fill="${i ? "#37474f" : "#c62828"}">${txt}</text></g>`).join("");
+  // S4 channel icons + chips (world coords)
+  const ICON = {
+    tg: `<circle r="62" fill="#29a9eb"/><path d="M-32,-2 L30,-28 L18,30 L2,14 L-8,26 L-8,8 L22,-18 L-14,4Z" fill="#fff"/>`,
+    sms: `<circle r="62" fill="#43a047"/><rect x="-34" y="-26" width="68" height="44" rx="12" fill="#fff"/><path d="M-14,16 L-22,32 L2,16Z" fill="#fff"/><text y="5" text-anchor="middle" font-size="20" font-weight="800" fill="#43a047" font-family="Liberation Sans">SMS</text>`,
+    call: `<circle r="62" fill="#fb8c00"/><path d="M-24,-30 Q-34,-20 -26,0 Q-10,30 18,34 Q32,34 34,22 L20,10 Q14,6 8,12 L4,16 Q-12,8 -18,-8 L-12,-12 Q-6,-18 -10,-24Z" fill="#fff"/>`,
+  };
+  $("icons").innerHTML = [["tg", "Telegram", 880, 330], ["sms", "SMS", 1110, 255], ["call", "Call", 1340, 330]].map(([k, lab, x, y], i) =>
+    `<g id="ic${i}" data-x="${x}" data-y="${y}">${ICON[k]}<rect x="-80" y="76" width="160" height="44" rx="22" fill="#fff"/><text y="108" text-anchor="middle" font-size="28" font-weight="800" fill="#263238">${lab}</text></g>`).join("") +
+    ["मराठी", "हिंदी", "English"].map((l, i) => `<g id="lang${i}" transform="translate(1560,${465 + i * 82})"><rect x="-105" y="-30" width="210" height="60" rx="30" fill="#fffde7" stroke="#f9a825" stroke-width="3"/><text y="12" text-anchor="middle" font-size="32" font-weight="800" fill="#5d4037">${l}</text></g>`).join("") +
+    `<g id="nosp" transform="translate(425,520)"><rect x="-175" y="-58" width="350" height="116" rx="24" fill="#fff" stroke="#43a047" stroke-width="4"/>
+      <rect x="-155" y="-38" width="44" height="76" rx="8" fill="#455a64"/><rect x="-149" y="-32" width="32" height="24" rx="2" fill="#b2dfdb"/>
+      ${[0, 1, 2].map(r => [0, 1, 2].map(c => `<circle cx="${-143 + c * 10}" cy="${2 + r * 10}" r="3" fill="#cfd8dc"/>`).join("")).join("")}
+      <text x="-92" y="-8" font-size="30" font-weight="800" fill="#2e7d32">बेसिक फ़ोन भी ✓</text><text x="-92" y="32" font-size="26" fill="#455a64">SMS · Call</text></g>`;
+  buildPhone(); buildMap(); buildChart(); buildMontage(); buildEnd();
+  return S[7] + D[7];
+}
+
+/* ---------------- phone (scenes 5-6) ---------------- */
+function buildPhone() {
+  const C = $("chat"), s5 = S[4], s6 = S[5];
+  const c0 = ck(4, 0), c1 = ck(4, 1), c2 = ck(4, 2);
+  el(`<div class="b">🌾 कौन सी फसल बेचनी है?</div>`, C, s5 + .3);
+  el(`<div class="kb"><div id="kCrop">🧅 कांदा</div><div>🍅 टोमॅटो</div><div>🫘 सोयाबीन</div><div>🌾 गहू</div><div>🍇 द्राक्षे</div><div>🌽 मका</div></div>`, C, s5 + .5);
+  TAPS.push(["kCrop", c0 + .35]);
+  el(`<div class="b me">🧅 कांदा</div>`, C, c0 + .75);
+  el(`<div class="b">⚖️ किती क्विंटल?</div>`, C, c0 + 1.15);
+  el(`<div class="kb c3"><div>10 क्विंटल</div><div>25 क्विंटल</div><div id="kQty">50 क्विंटल</div></div>`, C, c0 + 1.3);
+  TAPS.push(["kQty", c0 + 2.0]);
+  el(`<div class="b me">50 क्विंटल</div>`, C, c0 + 2.4);
+  const card = el(`<div class="b adv"></div>`, C, c1 - .25);
+  const L = [`<span class="best">✅ पिंपळगाव बसवंत बाजार समिती (नाशिक) · 20 किमी</span>`, `₹4,325 × 50 = ₹2,16,250`,
+    `<span class="mu">➖ ट्रक भाडे (20 किमी × ₹25): ₹500</span>`, `<span class="mu">➖ हमाली/तोलाई: ₹1,000</span>`];
+  const step = (c2 - c1) / 4;
+  L.forEach((h, i) => el(`<span class="l">${h}</span>`, card, c1 + i * step, 1e9, "left"));
+  el(`<span class="gold">💰 हातात: ₹2,14,750</span>`, card, c2 + .2, 1e9, "pop");
+  // scene 6: what-if-I-wait
+  const d0 = ck(5, 0), d1 = ck(5, 1), d2 = ck(5, 2);
+  el(`<div class="b me">⏳ 14 दिन रुकें तो?</div>`, C, s6 + .2);
+  const w = el(`<div class="b adv"></div>`, C, d0 - .1);
+  el(`<span class="l best">⏳ 14 दिन रुकें, फिर बेचें</span>`, w, d0);
+  el(`<span class="l">अनुमानित भाव ₹4,700 × 50</span>`, w, d0 + .6, 1e9, "left");
+  el(`<span class="l mu">(संभवतः ₹3,900 से ₹5,100 के बीच)</span>`, w, d0 + 1.2, 1e9, "left");
+  el(`<span class="l">➕ रुकने पर लगभग ₹7,000 ज़्यादा</span>`, w, d1, 1e9, "left");
+  el(`<span class="l" style="color:#b71c1c">⚠️ भाव गिरा तो सिर्फ़ ₹1,83,700</span>`, w, d1 + .9, 1e9, "left");
+  el(`<span class="l" style="margin-top:6px"><span class="ybadge">🟡 भरोसा: मध्यम</span></span>`, w, d2, 1e9, "pop");
+  el(`<span class="l" style="font-weight:700">फ़ैसला आपका है 🙏</span>`, w, d2 + .7, 1e9, "left");
+}
+const TAPS = [];
+
+function buildMap() {
+  const P = { home: [330, 380], pim: [205, 270], las: [470, 300], nas: [70, 430] };
+  const pin = (id, [x, y], col, lab, big) => `<g id="${id}" transform="translate(${x},${y})"><g class="pinb">
+     <path d="M0,0 C-${big ? 22 : 14},-${big ? 30 : 20} -${big ? 24 : 16},-${big ? 56 : 38} 0,-${big ? 58 : 40} C${big ? 24 : 16},-${big ? 56 : 38} ${big ? 22 : 14},-${big ? 30 : 20} 0,0Z" fill="${col}"/>
+     <circle cy="-${big ? 38 : 26}" r="${big ? 10 : 6}" fill="#fff"/></g>
+     <text y="${big ? 36 : 28}" text-anchor="middle" font-size="${big ? 25 : 21}" font-weight="${big ? 800 : 600}" fill="#263238" stroke="#fff" stroke-width="6" paint-order="stroke">${lab}</text></g>`;
+  $("map").innerHTML = `<h3>🗺️ नाशिक ज़िला</h3><div class="sub">Nashik district · onion belt</div>
+   <svg width="560" height="540" viewBox="0 0 560 540"><rect width="560" height="540" fill="#eef3e3"/>${[[30,40,120,90],[400,60,130,100],[60,140,90,70],[420,380,110,80],[150,480,140,50],[300,120,100,80]].map(([x,y,w,h],k)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="10" fill="${k%2?"#dcebc6":"#e6efd3"}"/>`).join("")}
+    <path d="M-10,470 Q120,430 220,455 Q330,480 420,420 Q500,370 570,390" stroke="#81c6e8" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <text x="440" y="455" font-size="18" fill="#3b88b5" font-style="italic">गोदावरी</text>
+    <path d="M70,430 L205,270 L330,380 L470,300 M205,270 L240,60 M330,380 L360,530 M470,300 L560,250" stroke="#fff" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M70,430 L205,270 L330,380 L470,300 M205,270 L240,60 M330,380 L360,530 M470,300 L560,250" stroke="#cfd8c0" stroke-width="2" fill="none"/>
+    <path id="route" d="M330,380 L205,270" stroke="#e53935" stroke-width="7" stroke-dasharray="14 10" fill="none" stroke-linecap="round"/>
+    <g id="kmlab" transform="translate(318,342)"><rect x="-58" y="-24" width="116" height="40" rx="20" fill="#e53935"/><text y="6" text-anchor="middle" font-size="22" font-weight="800" fill="#fff">20 किमी</text></g>
+    ${pin("pNas", P.nas, "#90a4ae", "नाशिक")}${pin("pLas", P.las, "#90a4ae", "लासलगाव")}
+    <g transform="translate(${P.home[0]},${P.home[1]})"><circle r="16" fill="#2e7d32" stroke="#fff" stroke-width="4"/><text y="44" text-anchor="middle" font-size="22" font-weight="700" fill="#2e7d32" stroke="#fff" stroke-width="6" paint-order="stroke">🏠 निफाड (रामू)</text></g>
+    ${pin("pPim", P.pim, "#e53935", "पिंपळगाव बसवंत", 1)}
+   </svg>`;
+}
+function buildChart() {
+  const X = d => 60 + d * 28, Y = v => 420 - (v - 3600) * 0.2;   // days 0..14 -> 60..452, price 3600..5400 -> 420..60
+  $("chart").innerHTML = `<h3>📈 अगले 14 दिन · भाव अनुमान</h3><div class="sub">कांदा · ₹/क्विंटल · Price band, not a promise</div>
+   <svg width="560" height="470" viewBox="0 0 560 470"><defs><clipPath id="rev"><rect id="revr" x="0" y="0" width="0" height="470"/></clipPath></defs>
+    ${[4000, 4500, 5000].map(v => `<path d="M60,${Y(v)} H520" stroke="#e0e6dc" stroke-width="2"/><text x="52" y="${Y(v) + 7}" text-anchor="end" font-size="18" fill="#78909c">${v.toLocaleString("en-IN")}</text>`).join("")}
+    <path d="M60,420 H520" stroke="#90a4ae" stroke-width="2"/>
+    <text x="${X(0)}" y="450" text-anchor="middle" font-size="20" fill="#546e7a">आज</text><text x="${X(14)}" y="450" text-anchor="middle" font-size="20" fill="#546e7a">14 दिन</text>
+    <g clip-path="url(#rev)">
+     <path d="M${X(0)},${Y(4325)} L${X(14)},${Y(5100)} L${X(14)},${Y(3900)}Z" fill="#ffca28" opacity=".35"/>
+     <path d="M${X(0)},${Y(4325)} L${X(14)},${Y(4700)}" stroke="#2e7d32" stroke-width="5" stroke-dasharray="12 8"/>
+     <circle cx="${X(14)}" cy="${Y(5100)}" r="7" fill="#2e7d32"/><circle cx="${X(14)}" cy="${Y(4700)}" r="8" fill="#2e7d32"/><circle cx="${X(14)}" cy="${Y(3900)}" r="7" fill="#c62828"/>
+    </g>
+    <circle cx="${X(0)}" cy="${Y(4325)}" r="9" fill="#1b5e20"/><text x="${X(0) + 10}" y="${Y(4325) + 36}" font-size="21" font-weight="700" fill="#1b5e20">₹4,325</text>
+    <g id="clabs" font-size="22" font-weight="800">
+     <text x="${X(14) + 14}" y="${Y(5100) + 8}" fill="#2e7d32">₹5,100</text>
+     <text x="${X(14) + 14}" y="${Y(4700) + 8}" fill="#2e7d32">₹4,700</text>
+     <text x="${X(14) + 14}" y="${Y(3900) + 8}" fill="#c62828">₹3,900</text></g>
+   </svg>
+   <div id="cbadge" style="position:absolute;left:30px;bottom:24px;font-size:28px"><span class="ybadge">🟡 भरोसा: मध्यम</span></div>`;
+}
+
+/* ---------------- montage (scene 7) ---------------- */
+function smallTruck(col) {
+  return `<g><rect x="-30" y="-30" width="40" height="24" rx="3" fill="${col}"/><path d="M10,-6 L10,-26 L22,-26 L30,-14 L30,-6Z" fill="#f2a33a"/>
+   <circle cx="-18" cy="-4" r="7" fill="#263238"/><circle cx="20" cy="-4" r="7" fill="#263238"/></g>`;
+}
+function buildMontage() {
+  $("m1").innerHTML = `<h3>⏱️ Spoilage Clock</h3><div class="sub">गोदाम की फ़ोटो → माल कितने दिन टिकेगा</div>
+   <svg width="560" height="330" viewBox="0 0 560 330">
+    <g id="polar" transform="translate(140,170) rotate(-5)"><rect x="-110" y="-120" width="220" height="230" fill="#fff" stroke="#ddd" stroke-width="2"/>
+     <rect x="-96" y="-106" width="192" height="168" fill="#8d7a5e"/><rect x="-96" y="-30" width="192" height="92" fill="#6d5c45"/>
+     ${sack(-50, 50, .75, -4)}${sack(10, 54, .75, 3)}${sack(62, 50, .7, -2)}${sack(-20, -10, .7, 2)}${sack(40, -6, .65, -3)}
+     <rect id="flash" x="-110" y="-120" width="220" height="230" fill="#fff" opacity="0"/></g>
+    <path id="arrow1" d="M262,170 L300,170 M290,160 L302,170 L290,180" stroke="#90a4ae" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <g id="clock" transform="translate(420,170)"><circle r="100" fill="#f1f8e9"/><circle r="84" fill="none" stroke="#e0e0e0" stroke-width="16"/>
+     <circle id="ring" r="84" fill="none" stroke="#43a047" stroke-width="16" stroke-linecap="round" transform="rotate(-90)" stroke-dasharray="0 600"/>
+     <path id="hand" d="M0,0 L0,-62" stroke="#263238" stroke-width="6" stroke-linecap="round"/><circle r="8" fill="#263238"/></g>
+   </svg>
+   <div id="m1t"><div class="big">🟢 माल अच्छा · कोंब नहीं</div><div class="big" style="font-weight:600">हर हफ़्ते ~2.1% घट</div><div class="sub">Loses ~2.1% a week — sell before it costs you</div></div>`;
+  $("m2").innerHTML = `<h3>🚚 ट्रक शेयर</h3><div class="sub">पड़ोसी के साथ एक ट्रक — भाड़ा बाँटो</div>
+   <svg width="560" height="360" viewBox="0 0 560 360">
+    <path d="M70,70 Q170,80 270,180 M70,180 L270,180 M70,290 Q170,280 270,180 L470,180" stroke="#e0d6c2" stroke-width="12" fill="none" stroke-linecap="round"/>
+    ${[["रामू", 70], ["शामू", 180], ["पड़ोसी", 290]].map(([n, y]) => `${house(48, y + 18, .42, "#f3e0c0", "#c0583a")}<text x="48" y="${y + 50}" text-anchor="middle" font-size="19" font-weight="700" fill="#455a64">${n}</text>`).join("")}
+    <g transform="translate(500,180)"><rect x="-38" y="-40" width="76" height="52" fill="#fff3e0" stroke="#bf6c33" stroke-width="3"/><path d="M-46,-38 L0,-66 L46,-38Z" fill="#bf6c33"/><text y="44" text-anchor="middle" font-size="20" font-weight="800" fill="#bf6c33">मंडी</text></g>
+    <g id="t0">${smallTruck("#1e88e5")}</g><g id="t1">${smallTruck("#8e24aa")}</g><g id="t2">${smallTruck("#e53935")}</g>
+    <g id="tbig"><g transform="scale(1.6)">${smallTruck("#2e7d32")}</g></g>
+    <g id="save" transform="translate(280,92)"><rect x="-110" y="-38" width="220" height="70" rx="35" fill="#ffca28" stroke="#f9a825" stroke-width="3"/><text y="12" text-anchor="middle" font-size="34" font-weight="800" fill="#3e2c00">₹425 बचत</text></g>
+   </svg><div class="big" id="m2t" style="text-align:center">3 ट्रक → 1 ट्रक</div>`;
+  $("m3").innerHTML = `<h3>🏢 FPO → किसान खज़ाना</h3><div class="sub">अपना माल FPO को दो · FPO बड़े व्यापारियों को बेचेगा</div>
+   <div id="m3c" style="margin:10px 24px 0;background:#cfe1b9;border-radius:18px;padding:8px;display:flex;flex-direction:column;gap:6px"></div>
+   <svg width="560" height="176" viewBox="0 0 560 176">
+    <g transform="translate(290,112)"><path d="M-84,0 L-84,-58 L0,-98 L84,-58 L84,0Z" fill="#f5e6c8" stroke="#8d6e63" stroke-width="3"/>
+     <rect x="-24" y="-46" width="48" height="46" fill="#6d4c41"/><text y="-62" text-anchor="middle" font-size="26" font-weight="800" fill="#2e7d32" font-family="Liberation Sans">FPO</text>
+     <text y="30" text-anchor="middle" font-size="18" font-weight="700" fill="#5d4037">FPO गोदाम</text></g>
+    <g id="fs"></g>
+    <text x="78" y="166" text-anchor="middle" font-size="17" font-weight="700" fill="#455a64">रामू</text><text x="178" y="166" text-anchor="middle" font-size="17" font-weight="700" fill="#455a64">पड़ोसी</text>
+    <g transform="translate(486,116)"><circle cy="-80" r="17" fill="#c98d60"/><path d="M-30,-40 Q-30,-64 0,-64 Q30,-64 30,-40 L30,-16 L-30,-16Z" fill="#5c6bc0"/>
+     <rect x="-40" y="-52" width="80" height="48" rx="4" fill="#263238"/><rect x="-35" y="-47" width="70" height="38" fill="#4fc3f7"/><rect x="-46" y="-6" width="92" height="9" rx="3" fill="#455a64"/>
+     <g id="optick" transform="scale(0)"><text y="-16" text-anchor="middle" font-size="30">✅</text></g>
+     <text y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#455a64">FPO ऑपरेटर</text></g>
+   </svg>`;
+  const C = $("m3c"), o = ck(6, 2), p3 = ck(6, 3);
+  el(`<div class="b" style="font-size:21px;padding:6px 12px">🧅 कांदा 50 क्विंटल — कहाँ बेचें?</div>`, C, o + .1);
+  el(`<div class="kb"><div id="kFpo" style="font-size:21px">🏢 FPO ला द्या</div><div style="font-size:21px">🏪 मंडी</div></div>`, C, o + .25);
+  TAPS.push(["kFpo", o + 1.0]);
+  const TRADER = `<svg width="44" height="44" viewBox="-22 -22 44 44" style="flex:none"><circle r="22" fill="#eceff1"/><path d="M-17,22 Q-17,4 0,4 Q17,4 17,22Z" fill="#263238"/><path d="M-4,5 L0,15 L4,5 L0,7Z" fill="#c62828"/><circle cy="-6" r="10" fill="#c98d60"/><path d="M-12,-9 Q0,-22 12,-9 L14,-7 L-14,-7Z" fill="#37474f"/></svg>`;
+  const kk = el(`<div style="margin:0 24px;border-radius:14px;overflow:hidden;background:#fff;border:2px solid #cfd8dc"></div>`, $("m3"), p3 - .1);
+  el(`<div style="background:#1b5e20;color:#fff;padding:6px 14px;font:800 21px 'Liberation Sans',sans-serif">Kisaan Khazana <span style="font-weight:400;font-size:15px;opacity:.8">· buyer app</span></div>`, kk, p3 - .1);
+  el(`<div style="padding:6px 14px;font-size:21px;line-height:1.3;border-bottom:1px solid #eee"><b>🧅 कांदा · 100 क्विंटल</b><br><span style="font-size:17px;color:#607d8b">लॉट: FPO निफाड · 4 किसान</span></div>`, kk, p3 + .2, 1e9, "left");
+  el(`<div style="display:flex;align-items:center;gap:10px;padding:6px 14px;font-size:20px;line-height:1.25">${TRADER}<div><b>ABC Traders</b> · ऑफ़र<br><b style="color:#1b5e20;font-size:22px">₹4,400 / क्विंटल</b></div></div>`, kk, p3 + 1.4, 1e9, "left");
+  el(`<div style="margin:2px 12px 10px;background:#e8f5e9;border-radius:10px;padding:5px 12px;font-size:19px;font-weight:700;color:#1b5e20">✅ FPO ने स्वीकारा · फ़ीस सिर्फ़ 1%</div>`, kk, p3 + 2.8, 1e9, "pop");
+}
+function buildEnd() {
+  $("end").innerHTML = `<svg width="170" height="170" viewBox="-85 -85 170 170"><circle r="80" fill="#ffca28"/>
+     <path d="M0,46 L0,-6" stroke="#1b5e20" stroke-width="10" stroke-linecap="round"/>
+     <path d="M0,-2 C-8,-40 -44,-48 -56,-34 C-42,-10 -16,-6 0,-2Z" fill="#2e7d32"/><path d="M0,-12 C10,-50 46,-56 58,-42 C44,-18 18,-14 0,-12Z" fill="#43a047"/>
+     <text y="70" text-anchor="middle" font-size="34" font-weight="800" fill="#1b5e20" font-family="Liberation Sans">₹</text></svg>
+   <div class="name">Sell Smart</div><div class="tag">सही बाज़ार · सही समय · पूरा हिसाब</div><div class="tagen">Right market · Right time · Full math</div>
+   <div class="ch">Telegram: @SellSmartKisanBot · SMS · Call</div><div class="ch2">Buyers &amp; FPOs: Kisaan Khazana</div>`;
+}
+
+/* ---------------- per-frame ---------------- */
+function camAt(i, lt) {
+  const p = lt / D[i];
+  return [
+    () => [lerp(960, 800, eio(p)), lerp(540, 650, eio(p)), lerp(1, 1.3, eio(p))],
+    () => [lerp(800, 780, p), lerp(650, 640, p), lerp(1.3, 1.34, p)],
+    () => [960, 640, 1.18],
+    () => [1000, 600, 1.2],
+    () => [1560, 524, .9], () => [1560, 524, .9], () => [1560, 524, .9],
+    () => [lerp(1250, 1270, p), 640, lerp(1, 1.04, p)],
+  ][i]();
+}
+function seek(t) {
+  let i = 0; while (i < 7 && t >= S[i + 1]) i++;
+  const lt = t - S[i];
+  let c = camAt(i, lt);
+  if (i > 0 && lt < 1.1 && i !== 7) { const pc = camAt(i - 1, D[i - 1]), q = eio(lt / 1.1); c = c.map((v, k) => lerp(pc[k], v, q)); }
+  attr($("cam"), "transform", `translate(960,540) scale(${c[2]}) translate(${-c[0]},${-c[1]})`);
+
+  // ---- background state
+  const sunset = i === 7 ? eio(seg(lt, 0, 2.5)) : 0;
+  $("dusk").setAttribute("opacity", sunset); $("warm").setAttribute("opacity", .16 * sunset);
+  attr($("sun"), "transform", `translate(${lerp(1500, 1700, sunset)},${lerp(170, 470, sunset)}) scale(${1 + .5 * sunset})`);
+  $("sunc").setAttribute("fill", sunset > .5 ? "#ffb74d" : "#fff4b8");
+  attr($("clouds"), "transform", `translate(${t * 6},0)`);
+  $("bgdim").setAttribute("opacity", (i === 4 || i === 5) ? .55 * eout(seg(lt, 0, .8)) : i === 6 ? .55 : 0);
+  // truck drives in at sunset
+  const tx = i === 7 ? lerp(2700, 1470, eout(seg(lt, .2, 2.4))) : 4000;
+  attr($("truck"), "transform", `translate(${tx},880)`);
+
+  // ---- characters
+  const R0 = { x: 760, y: 880, s: .72, sit: 0, lg: [0, 0], ua: [8, -8], fa: [0, 0], head: 0, mood: 0 };
+  const r = { ...R0 }, sh = { ...R0, x: 2600 };
+  const rtalk = talk("ramu", t), stalk = talk("shamu", t);
+  if (i <= 1) {
+    r.sit = 1; r.ua = [12, -12]; r.fa = [-20, 20]; r.head = -3 + Math.sin(t * 1.3) * 2; r.mood = i ? -.9 : -.35 - .3 * seg(lt, 3, 6);
+    if (i === 1) {
+      const nb = eout(seg(lt, 0, .6)); r.ua[0] = lerp(12, 15, nb); r.fa[0] = lerp(-20, -144, nb); r.prop = NOTE; r.propSide = "L";
+      const sc = eio(seg(lt, 1.4, 2.2)) * (1 - eio(seg(lt, D[1] - 2.2, D[1] - 1.4)));
+      r.ua[1] = lerp(-12, -150, sc); r.fa[1] = lerp(20, -75 + 10 * Math.sin(lt * 16), sc); r.head = -7 * sc - 2;
+    }
+  } else if (i === 2) {
+    r.sit = 1 - eio(seg(lt, 1.2, 2.0)); r.mood = lerp(-.7, .1, seg(lt, 2.4, 3.4)); r.head = lerp(-3, 5, seg(lt, 1, 2));
+    r.ua = [12, -12]; r.fa = [-20, 20];
+  } else if (i === 3) { r.mood = lerp(.2, .7, seg(lt, ck(3, 2) - S[3], ck(3, 2) - S[3] + .6)); r.head = 5;
+  } else if (i === 4 || i === 5) {
+    r.x = lerp(760, 820, eio(seg(lt, .3, 1.3))); r.lean = i === 5 ? 7 * eio(seg(lt, .2, 1.2)) : 0;
+    r.mood = i === 4 ? lerp(.2, .9, seg(t, ck(4, 2) + .3, ck(4, 2) + 1)) : lerp(.3, 1, seg(t, ck(5, 2), ck(5, 2) + .6));
+    r.head = 6 + (i === 5 ? 3 * Math.sin(seg(t, ck(5, 2), ck(5, 2) + 1.2) * Math.PI * 2) : 0);
+    if (i === 4 && lt < 1.3 && lt > .3) walk(r, t, .7);
+  } else if (i >= 6) {
+    r.x = 1110; r.mood = 1; r.head = 4;
+    const cheer = eio(seg(t, CL[7].start, CL[7].start + .5)) * (1 - eio(seg(t, CL[7].start + CL[7].dur, CL[7].start + CL[7].dur + .5)));
+    r.ua = [lerp(10, 155, cheer), lerp(-10, -155, cheer)]; r.fa = [lerp(-30, 15 + 10 * Math.sin(t * 8), cheer), lerp(30, -15 - 10 * Math.sin(t * 8), cheer)];
+  }
+  r.open = rtalk;
+  // Shamu
+  if (i === 2) {
+    const wk = seg(lt, 0, 2.4); sh.x = lerp(2150, 1110, eout(wk));
+    if (wk < 1) walk(sh, t, 1 - wk * .6);
+    const wave = seg(lt, .2, .6) * (1 - seg(lt, 3.2, 3.7));
+    sh.ua = [lerp(8, 135, wave), -8]; sh.fa = [lerp(0, 45 + 22 * Math.sin(t * 11), wave), 0];
+    sh.mood = 1; sh.prop = PHONE; sh.propSide = "R";
+  } else if (i === 3) {
+    sh.x = 1110; sh.mood = 1; const up = eio(seg(lt, .1, .8));
+    sh.ua = [8 + 15 * Math.sin(t * 2.2) * stalk, lerp(-8, -122, up)]; sh.fa = [-10, lerp(0, -58, up)]; sh.prop = PHONE; sh.propSide = "R";
+    sh.head = 3 * Math.sin(t * 2);
+  } else if (i === 4 || i === 5) {
+    sh.x = 1110; sh.mood = .9; sh.ua = [8, -22]; sh.fa = [0, 168]; sh.prop = PHONE; sh.propSide = "R"; sh.head = -4;
+  } else if (i >= 6) {
+    sh.x = 1330; sh.mood = 1; let sw = 0;
+    for (let k = 0; k < 3; k++) sw = Math.max(sw, Math.sin(Math.PI * seg(t, S[7] + 2.1 + k * 1.3, S[7] + 2.9 + k * 1.3)));
+    sh.ua = [lerp(10, -95, sw), lerp(-10, -125, sw)]; sh.fa = [lerp(0, -40, sw), lerp(0, -20, sw)]; sh.head = 4 * sw;
+  }
+  sh.open = stalk;
+  pose("ramu", r, t); pose("shamu", sh, t);
+  $("seat").style.opacity = 1;
+
+  // ---- thought bubbles (scene 2)
+  const bt = [S[1] + .7, ck(1, 0) + 1.3, ck(1, 1) + .2];
+  bt.forEach((b, k) => { const p = back(seg(t, b, b + .5)), o = i === 1 ? 1 : i === 2 ? 1 - seg(lt, .3, .9) : 0, b2 = BUB[k];
+    attr($("bub" + k), "transform", `translate(${b2[0]},${b2[1]}) scale(${Math.max(.01, p)})`); $("bub" + k).style.opacity = o * cl(p * 3); });
+
+  // ---- channel icons (scene 4)
+  const ph = [1110 + 60 * .72 * 0 + 76, 880 - 600 * .72 + 92 * .72];   // approx raised-phone position in world coords
+  [0, 1, 2].forEach(k => {
+    const s0 = S[3] + .9 + k * .55, p = eout(seg(t, s0, s0 + .9)), g = $("ic" + k), x = +g.dataset.x, y = +g.dataset.y;
+    const vis = i === 3 ? 1 : 0;
+    attr(g, "transform", `translate(${lerp(ph[0], x, p)},${lerp(ph[1], y, p)}) scale(${.3 + .7 * back(seg(t, s0, s0 + .9))})`);
+    g.style.opacity = vis * cl(p * 4);
+  });
+  [0, 1, 2].forEach(k => { const s0 = ck(3, 1) + k * .45, g = $("lang" + k); g.style.opacity = i === 3 ? eout(seg(t, s0, s0 + .4)) : 0;
+    attr(g, "transform", `translate(${1560 + (1 - eout(seg(t, s0, s0 + .4))) * 40},${465 + k * 82})`); });
+  $("nosp").style.opacity = i === 3 ? eout(seg(t, ck(3, 2), ck(3, 2) + .4)) : 0;
+
+  // ---- panels (scenes 5-6)
+  const pin = i === 4 || i === 5;
+  const phIn = pin ? eout(seg(t, S[4] + .1, S[4] + .8)) * (i === 5 ? 1 - seg(t, S[6] - .5, S[6]) : 1) : 0;
+  $("phone").style.opacity = cl(phIn * 2); $("phone").style.transform = `translateY(${(1 - phIn) * 80}px)`;
+  const mp = i === 4 ? eout(seg(lt, .3, 1)) : i === 5 ? 1 - eio(seg(lt, 0, .5)) : 0;
+  $("map").style.opacity = mp; $("map").style.transform = `translateX(${(1 - mp) * (i === 5 ? -80 : 80)}px)`;
+  const drop = seg(t, ck(4, 1), ck(4, 1) + .6);
+  $("pPim").querySelector(".pinb").style.transform = `translateY(${(1 - back(drop)) * -160}px)`;
+  $("pPim").style.opacity = drop > 0 ? 1 : 0;
+  $("route").style.strokeDashoffset = 0; $("route").style.opacity = seg(t, ck(4, 1) + .5, ck(4, 1) + 1);
+  $("kmlab").style.opacity = seg(t, ck(4, 1) + .8, ck(4, 1) + 1.2);
+  const cp = i === 5 ? eout(seg(lt, .4, 1.1)) : 0;
+  $("chart").style.opacity = cp; $("chart").style.transform = `translateX(${(1 - cp) * 80}px)`;
+  attr($("revr"), "width", 60 + 470 * eio(seg(t, ck(5, 0), ck(5, 1) + .5)));
+  $("clabs").style.opacity = seg(t, ck(5, 1) - .3, ck(5, 1) + .3);
+  $("cbadge").style.opacity = seg(t, ck(5, 2), ck(5, 2) + .4);
+
+  // ---- montage (scene 7)
+  const dm = i === 6 ? eout(seg(lt, 0, .5)) : i === 7 ? 1 - eio(seg(lt, 0, .7)) : 0;
+  $("dim").style.opacity = dm;
+  [0, 1, 2].forEach(k => { const s0 = ck(6, k) - .3, p = eout(seg(t, s0, s0 + .6)), m = $("m" + (k + 1));
+    m.style.opacity = (i === 6 || (i === 7 && dm > 0)) ? p * dm : 0; m.style.transform = `translateY(${(1 - p) * 60}px) scale(${.92 + .08 * p})`; });
+  const m0 = ck(6, 0);
+  $("flash").setAttribute("opacity", seg(t, m0 + .4, m0 + .5) * (1 - seg(t, m0 + .5, m0 + .9)));
+  $("arrow1").style.opacity = seg(t, m0 + 1, m0 + 1.4);
+  const ring = eio(seg(t, m0 + 1.3, m0 + 3.3));
+  $("ring").setAttribute("stroke-dasharray", `${ring * 528 * .82} 600`);
+  attr($("hand"), "transform", `rotate(${ring * 296})`);
+  $("clock").style.opacity = seg(t, m0 + 1.1, m0 + 1.5);
+  $("m1t").style.opacity = seg(t, m0 + 2.2, m0 + 2.8);
+  const m1 = ck(6, 1), mg = eio(seg(t, m1 + .2, m1 + 1.8)), go = eio(seg(t, m1 + 1.9, m1 + 3.2));
+  [[70, 70], [70, 180], [70, 290]].forEach(([x, y], k) => { const g = $("t" + k);
+    attr(g, "transform", `translate(${lerp(x + 30, 262, mg)},${lerp(y + 6, 186, mg)})`); g.style.opacity = t < m1 + 1.8 ? 1 : 1 - seg(t, m1 + 1.8, m1 + 2.0); });
+  attr($("tbig"), "transform", `translate(${lerp(262, 440, go)},${190})`); $("tbig").style.opacity = seg(t, m1 + 1.8, m1 + 2.0);
+  const sv = back(seg(t, m1 + 2.4, m1 + 2.9)); attr($("save"), "transform", `translate(280,92) scale(${Math.max(.01, sv)})`); $("save").style.opacity = sv > 0 ? 1 : 0;
+  $("m2t").style.opacity = seg(t, m1 + 2.6, m1 + 3);
+  const o2 = ck(6, 2) + 1.4, p3 = ck(6, 3);
+  $("fs").innerHTML = [[50, 148], [84, 120], [118, 152], [162, 140], [196, 118]].map(([x, y], k) => {
+    const p = eio(seg(t, o2 + k * .22, o2 + k * .22 + 1.0)); if (p >= 1) return "";
+    return `<g transform="translate(${lerp(x, 290, p)},${lerp(y, 100, p)}) scale(${lerp(.75, .25, p)})" opacity="${1 - seg(p, .85, 1)}">${SACK1}</g>`; }).join("");
+  attr($("optick"), "transform", `scale(${back(seg(t, p3 + 2.8, p3 + 3.3))})`);
+
+  // ---- sunset loading: sacks fly from Shamu to the truck bed
+  let fly = "";
+  if (i === 7) for (let k = 0; k < 3; k++) {
+    const s0 = S[7] + 2.4 + k * 1.3, p = seg(t, s0, s0 + 1.1);
+    if (t < s0) continue;
+    const x = lerp(1400, 1560 + k * 80, p), y = lerp(640, 630, p) - Math.sin(p * Math.PI) * 150;
+    fly += `<g transform="translate(${x},${y}) rotate(${Math.sin(p * Math.PI) * 30})">${SACK1}</g>`;
+  }
+  if (i === 7) fly = [0, 1, 2, 3].map(k => `<g transform="translate(${tx + 210 + k * 70 - 140},${880 - 205 + 6})">${SACK1}</g>`).join("") + fly;
+  $("flying").innerHTML = fly;
+
+  // ---- end card
+  const e0 = CL[7].start + CL[7].dur + 2.2, ep = eout(seg(t, e0, e0 + .9));
+  $("end").style.opacity = i === 7 ? ep : 0; $("end").style.transform = `scale(${1.04 - .04 * ep})`;
+
+  // ---- phone/montage HTML timeline + finger taps
+  applyAnim(t);
+  for (const [id, tt] of TAPS) $(id).classList.toggle("pressed", t >= tt && t < tt + .5);
+  const f = $("finger"); f.style.display = "none";
+  for (const [id, tt] of TAPS) if (t > tt - .7 && t < tt + .6) {
+    const b = $(id).getBoundingClientRect(); if (!b.width) continue;
+    const a = seg(t, tt - .7, tt - .1), lift = t < tt ? 0 : seg(t, tt + .2, tt + .6);
+    f.style.display = ""; f.style.left = `${b.left + b.width / 2 - 26 + (1 - eout(a)) * 120}px`;
+    f.style.top = `${b.top + b.height / 2 - 8 + (1 - eout(a)) * 140 + lift * 60}px`;
+    f.style.transform = `scale(${t >= tt && t < tt + .2 ? .85 : 1})`; f.style.opacity = eout(a) * (1 - lift);
+  }
+
+  // ---- subtitles
+  const sb = SUBS.find(s => t >= s.t0 - .05 && t < s.t1), el2 = $("subs");
+  if (sb) {
+    const who = { ramu: ["रामू", "#ffb74d"], shamu: ["शामू", "#4db6ac"], narr: null }[sb.who];
+    el2.innerHTML = `<div class="hi">${who ? `<span class="who" style="background:${who[1]};color:#1d2b20">${who[0]}</span>` : ""}${sb.hi}</div><div class="en">${sb.en}</div>`;
+    el2.style.opacity = 1;
+  } else el2.style.opacity = 0;
+}
+</script></body></html>

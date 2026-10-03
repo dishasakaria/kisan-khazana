@@ -1,0 +1,186 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Sell Smart onboarding</title>
+<!-- Frame-exact scene: record.js calls setup(lang, stepDurations) then seek(t) per frame. Open with ?lang=mr to preview live. -->
+<style>
+@font-face{font-family:Deva;src:url(NotoSansDevanagari.ttf);font-weight:100 900}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:540px;height:960px;overflow:hidden;background:#0f3d1a}
+body{font-family:Deva,"Liberation Sans","DejaVu Sans",sans-serif,"Noto Color Emoji";color:#111;position:relative}
+#cap{height:178px;background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#fff;display:flex;align-items:center;gap:16px;padding:0 20px;position:relative}
+#num{flex:none;width:96px;height:96px;border-radius:50%;background:#ffca28;color:#1b3d12;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;line-height:1}
+#num small{font-size:15px;font-weight:700}#num b{font-size:50px}
+#capt{font-size:27px;font-weight:700;line-height:1.3}
+#bar{position:absolute;left:0;bottom:0;height:6px;background:#ffca28}
+#phone{position:absolute;top:178px;left:0;right:0;bottom:0;display:flex;flex-direction:column;background:#cfe1b9}
+#hdr{height:66px;flex:none;background:#517da2;color:#fff;display:flex;align-items:center;gap:12px;padding:0 14px}
+.av{width:44px;height:44px;border-radius:50%;background:#f9a825;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:18px;flex:none}
+#hdr .nm{font-size:21px;font-weight:700;line-height:1.1}#hdr .sub{font-size:15px;opacity:.85}
+#msgs{flex:1;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:12px;
+ background:radial-gradient(circle at 20% 30%,#d9e8c3 0 8%,transparent 9%),radial-gradient(circle at 70% 70%,#d9e8c3 0 6%,transparent 7%),#cfe1b9;background-size:120px 120px}
+.b{max-width:88%;padding:10px 14px;border-radius:16px;font-size:22px;line-height:1.4;box-shadow:0 1px 1px rgba(0,0,0,.15);background:#fff;align-self:flex-start;border-bottom-left-radius:4px}
+.b.me{background:#e1fec6;align-self:flex-end;border-radius:16px;border-bottom-right-radius:4px}
+.desc{align-self:center;text-align:center;background:rgba(255,255,255,.92);max-width:80%;border-radius:16px}
+.loc{padding:6px;width:300px}.map{height:130px;border-radius:12px;background:repeating-linear-gradient(0deg,#e8e2d0 0 22px,#f6f1e2 22px 24px),#efe8d4;position:relative;overflow:hidden}
+.map:before{content:"";position:absolute;left:-20px;right:-20px;top:58px;height:14px;background:#fff;transform:rotate(-12deg)}
+.map span{position:absolute;left:50%;top:50%;transform:translate(-50%,-80%);font-size:44px}
+.loc p{padding:6px 6px 2px;font-size:20px;font-weight:700}
+.adv{font-size:22px;line-height:1.45;width:94%;max-width:94%}
+.adv .best{font-weight:800;color:#1b5e20}.adv .cash{font-weight:800;font-size:27px;border-radius:8px;padding:0 6px;margin:2px -6px}
+.adv .muted{color:#555;font-size:19px}
+.ibtns{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
+.ibtns div{background:rgba(81,125,162,.14);color:#2a5885;border-radius:10px;text-align:center;padding:8px 4px;font-size:19px;font-weight:700}
+.ibtns.c3{grid-template-columns:1fr 1fr 1fr}.map.sm{height:84px;margin-bottom:6px}.map i{position:absolute;left:54%;top:8px;font-style:normal;font-weight:700;font-size:17px;color:#5d4037}
+.kb{flex:none;background:#eef1f4;padding:8px;display:grid;gap:7px;border-top:1px solid #d5d9dd}
+.kb div,.startbar div{background:#fff;border-radius:10px;text-align:center;padding:12px 4px;font-size:22px;font-weight:700;color:#222;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.c1{grid-template-columns:1fr}.c3{grid-template-columns:1fr 1fr 1fr}
+.pressed{background:#ffe082!important;transform:scale(.95)}
+#inp{flex:none;height:64px;background:#fff;display:flex;align-items:center;gap:12px;padding:0 14px;font-size:22px;border-top:1px solid #ddd}
+#inp .f{flex:1;color:#999}#inp .f.t{color:#111}#inp .ic{font-size:28px;color:#8a99a6}
+#send{width:46px;height:46px;border-radius:50%;background:#517da2;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px}
+.startbar{flex:none;background:#fff;padding:10px 14px;border-top:1px solid #ddd}.startbar div{color:#3390ec;font-size:24px;letter-spacing:1px;box-shadow:none;background:#f1f6fb}
+#search{position:absolute;inset:0;background:#fff;z-index:5}
+#search .top{height:66px;background:#517da2;color:#fff;display:flex;align-items:center;gap:14px;padding:0 16px;font-size:24px}
+#search .q{flex:1;background:rgba(255,255,255,.18);border-radius:10px;padding:6px 12px;min-height:42px}
+.row{display:flex;align-items:center;gap:14px;padding:14px 16px;border-bottom:1px solid #eee}
+.row .av{width:58px;height:58px;font-size:22px}.row .nm{font-size:23px;font-weight:700}.row .sub{font-size:18px;color:#3390ec}
+.tg{padding:30px 20px;text-align:center;color:#517da2;font-size:20px}
+#tips{position:absolute;inset:0;background:rgba(15,40,20,.55);display:flex;flex-direction:column;justify-content:center;gap:22px;padding:24px;z-index:6}
+.tip{background:#fff;border-radius:22px;padding:22px;font-size:27px;font-weight:700;line-height:1.4;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.tip .e{font-size:54px;display:block}
+#end{position:absolute;inset:0;z-index:10;background:linear-gradient(160deg,#1b5e20,#0f3d1a);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:30px;padding:30px}
+#end .logo{font-size:110px}#end h1{font-size:48px;line-height:1.35}#end .h{background:#fff;color:#2a5885;border-radius:40px;padding:14px 28px;font-size:30px;font-weight:800}
+#end .s{font-size:24px;opacity:.9}
+#finger{position:absolute;z-index:20;font-size:76px;pointer-events:none;transform-origin:30% 5%}
+#ring{position:absolute;z-index:19;border:6px solid #ffca28;border-radius:50%;pointer-events:none}
+</style></head><body>
+<div id="cap"><div id="num"><small id="stepw"></small><b id="n">1</b></div><div id="capt"></div><div id="bar"></div></div>
+<div id="phone">
+  <div id="hdr"><div class="av">SS</div><div><div class="nm">Sell Smart</div><div class="sub">bot</div></div></div>
+  <div id="msgs"></div>
+  <div id="kbs"></div>
+  <div class="startbar" id="startbar"><div id="startbtn">START</div></div>
+  <div id="inp"><span class="ic">☺</span><span class="f" id="field"></span><span class="ic" id="mic">🎤</span><span id="send">➤</span></div>
+  <div id="search"><div class="top"><span>←</span><span class="q" id="q"></span></div>
+    <div class="row" id="res"><div class="av">SS</div><div><div class="nm">Sell Smart</div><div class="sub">@SellSmartKisanBot</div></div></div>
+    <div class="tg">Telegram</div></div>
+  <div id="tips"></div>
+</div>
+<div id="end"></div>
+<div id="ring"></div><div id="finger">👆</div>
+<script>
+const L = {
+ mr:{step:"पायरी",msg:"संदेश",pick:0,caps:["टेलिग्राम उघडा, @SellSmartKisanBot शोधा, START दाबा","भाषा निवडा, तुमचे नाव लिहा","ठिकाण पाठवा (किंवा पिनकोड लिहा)","विकायचे पीक निवडा","किती क्विंटल ते निवडा","सल्ला वाचा: कुठे विकायचे, हातात किती","बोलून विचारा • फोटो पाठवा"],
+  desc:"शेतमाल कुठे आणि कधी विकायचा — मोफत सल्ला",hello:"नमस्कार 🙏 सेल-स्मार्टमध्ये स्वागत! तुमचे नाव लिहा.",name:"रामेश",
+  thanks:"धन्यवाद रामेश! 📍 तुमचे ठिकाण पाठवा, किंवा ६ अंकी पिनकोड लिहा",locBtn:"📍 माझे ठिकाण पाठवा",loc:"निफाड, नाशिक",
+  crop:"🌾 कोणते पीक विकायचे?",crops:["कांदा","टोमॅटो","सोयाबीन","गहू","हरभरा","तूर","बटाटा","डाळिंब","मका","कापूस","इतर"],
+  qty:"⚖️ किती क्विंटल?",write:"✍️ लिहा",mandi:"लासलगाव",
+  adv:`<span class="best">✅ लासलगाव बाजार, नाशिक</span><br>📏 १८ किमी · 📅 आज, २ ऑक्टो<br><span class="muted">₹4,300 × 50 क्विं = ₹2,15,000<br>− ट्रक भाडे (₹25/किमी) ₹450<br>− हमाली ₹1,000</span><br><span class="cash" id="cash">💰 हातात: ₹2,13,550</span><br>जवळच्या बाजारापेक्षा ₹16,000 जास्त<br>🎯 खात्री: मध्यम`,
+  ib:["🛒 थेट विक्री","🤝 ट्रक शेअर","📸 साठवण फोटो","🔁 नवीन सल्ला"],
+  tips:["🎙️ बोलूनही विचारू शकता — व्हॉइस नोट पाठवा","📸 साठवलेल्या मालाचा फोटो पाठवा — किती दिवस टिकेल ते सांगू"],
+  end:"निर्णय तुमचा.<br>माहिती आमची. 🙏",endS:"टेलिग्राममध्ये शोधा"},
+ hi:{step:"चरण",msg:"संदेश",pick:1,caps:["टेलीग्राम खोलें, @SellSmartKisanBot खोजें, START दबाएँ","भाषा चुनें, अपना नाम लिखें","स्थान भेजें (या पिनकोड लिखें)","बेचने की फसल चुनें","कितने क्विंटल, चुनें","सलाह पढ़ें: कहाँ बेचें, हाथ में कितना","बोलकर पूछें • फोटो भेजें"],
+  desc:"फसल कहाँ और कब बेचें — मुफ़्त सलाह",hello:"नमस्ते 🙏 सेल-स्मार्ट में स्वागत है! अपना नाम लिखिए।",name:"रमेश",
+  thanks:"धन्यवाद रमेश! 📍 अपना स्थान भेजिए, या 6 अंकों का पिनकोड लिखिए",locBtn:"📍 मेरा स्थान भेजें",loc:"निफाड, नासिक",
+  crop:"🌾 कौन सी फसल बेचनी है?",crops:["प्याज़","टमाटर","सोयाबीन","गेहूँ","चना","तुअर","आलू","अनार","मक्का","कपास","अन्य"],
+  qty:"⚖️ कितने क्विंटल?",write:"✍️ लिखें",mandi:"लासलगाँव",
+  adv:`<span class="best">✅ लासलगाँव मंडी, नासिक</span><br>📏 18 किमी · 📅 आज, 2 अक्टूबर<br><span class="muted">₹4,300 × 50 क्विं = ₹2,15,000<br>− ट्रक भाड़ा (₹25/किमी) ₹450<br>− हमाली ₹1,000</span><br><span class="cash" id="cash">💰 हाथ में: ₹2,13,550</span><br>नज़दीकी मंडी से ₹16,000 ज़्यादा<br>🎯 भरोसा: मध्यम`,
+  ib:["🛒 सीधी बिक्री","🤝 ट्रक शेयर","📸 भंडारण फोटो","🔁 नई सलाह"],
+  tips:["🎙️ बोलकर भी पूछ सकते हैं — वॉइस नोट भेजिए","📸 रखे हुए माल की फोटो भेजिए — कितने दिन टिकेगा, हम बताएँगे"],
+  end:"फ़ैसला आपका.<br>जानकारी हमारी. 🙏",endS:"टेलीग्राम में खोजें"},
+ en:{step:"STEP",msg:"Message",pick:2,caps:["Open Telegram, search @SellSmartKisanBot, tap START","Choose language, type your name","Send location (or type pincode)","Choose your crop","Choose how many quintals","Read the advice: where to sell, money in hand","Ask by voice • Send a photo"],
+  desc:"Where and when to sell your crop — free advice",hello:"Namaste 🙏 Welcome to Sell-Smart! Please type your name.",name:"Ramesh",
+  thanks:"Thank you Ramesh! 📍 Send your location, or type your 6-digit pincode",locBtn:"📍 Send my location",loc:"Niphad, Nashik",
+  crop:"🌾 Which crop do you want to sell?",crops:["Onion","Tomato","Soybean","Wheat","Chana","Tur","Potato","Pomegranate","Maize","Cotton","Other"],
+  qty:"⚖️ How many quintals?",write:"✍️ Type",mandi:"Lasalgaon",
+  adv:`<span class="best">✅ Lasalgaon market, Nashik</span><br>📏 18 km · 📅 Today, 2 Oct<br><span class="muted">₹4,300 × 50 qtl = ₹2,15,000<br>− Truck rent (₹25/km) ₹450<br>− Loading (hamali) ₹1,000</span><br><span class="cash" id="cash">💰 In hand: ₹2,13,550</span><br>₹16,000 more than the nearest market<br>🎯 Confidence: Medium`,
+  ib:["🛒 Direct sale","🤝 Share a truck","📸 Storage photo","🔁 New advice"],
+  tips:["🎙️ You can also ask by voice — send a voice note","📸 Send a photo of your stored crop — we'll tell you how many days it will last"],
+  end:"Your decision.<br>Our information. 🙏",endS:"Search on Telegram"}
+};
+const $ = id => document.getElementById(id);
+let S, starts, total, taps = [], typing = [];
+function el(html, parent, tin, tout = 1e9, layout = true) {
+  const t = document.createElement("template"); t.innerHTML = html.trim();
+  const e = t.content.firstChild; e.dataset.in = tin; e.dataset.out = tout; if (layout) e.dataset.layout = 1;
+  parent.appendChild(e); return e;
+}
+function setup(lang, D) {
+  S = L[lang]; starts = []; let a = 0; for (const d of D) { starts.push(a); a += d; } total = a;
+  const at = (i, x) => starts[i] + (x < 0 ? D[i] + x : x);   // x<0: seconds before the step ends
+  const m = $("msgs"), k = $("kbs"); $("stepw").textContent = S.step; $("field").dataset.ph = S.msg;
+  // step 1: search, open, START
+  typing.push({e: $("q"), text: "@SellSmartKisanBot", a: at(0, .4), b: at(0, 2.4)});
+  $("res").dataset.in = at(0, 2.5); $("res").dataset.layout = 1;
+  const openT = at(0, 4.0); taps.push({e: $("res"), t: openT - .35});
+  $("search").dataset.in = 0; $("search").dataset.out = openT; $("search").dataset.nofade = 1;
+  el(`<div class="b desc">${S.desc}</div>`, m, openT, at(0, -1.2));
+  const startT = at(0, -1.6); taps.push({e: $("startbtn"), t: startT});
+  $("startbar").dataset.in = 0; $("startbar").dataset.out = startT + .3; $("startbar").dataset.layout = 1; $("startbar").dataset.nofade = 1;
+  $("inp").dataset.in = startT + .3; $("inp").dataset.layout = 1; $("inp").dataset.nofade = 1;
+  el(`<div class="b me">/start</div>`, m, startT + .3);
+  // step 2: name
+  const hello = el(`<div class="b">${S.hello}<div class="ibtns c3">${["मराठी","हिंदी","English"].map(b => `<div>${b}</div>`).join("")}</div></div>`, m, at(1, .3));
+  taps.push({e: hello.querySelectorAll(".ibtns div")[S.pick], t: at(1, 2.2), keep: 1});
+  const sendT = at(1, -1.4);
+  typing.push({e: $("field"), text: S.name, a: at(1, -3.2), b: sendT - .5, clear: sendT});
+  taps.push({e: $("send"), t: sendT});
+  el(`<div class="b me">${S.name}</div>`, m, sendT + .3);
+  // steps 3-5: bot question + reply keyboard + tap
+  const ask = (i, q, btns, cls, pick, reply) => {
+    el(`<div class="b">${q}</div>`, m, at(i, .3));
+    const tapT = at(i, -1.6);
+    const kb = el(`<div class="kb ${cls}">${btns.map(b => `<div>${b}</div>`).join("")}</div>`, k, at(i, .5), tapT + .35);
+    taps.push({e: kb.children[pick], t: tapT});
+    el(reply, m, tapT + .4);
+  };
+  ask(2, S.thanks, [S.locBtn], "c1", 0, `<div class="b me loc"><div class="map"><span>📍</span></div><p>${S.loc}</p></div>`);
+  ask(3, S.crop, S.crops, "c3", 0, `<div class="b me">${S.crops[0]}</div>`);
+  ask(4, S.qty, ["10","20","50","100","200",S.write], "c3", 2, `<div class="b me">50</div>`);
+  // step 6: advice card
+  el(`<div class="b adv"><div class="map sm"><span>📍</span><i>${S.mandi}</i></div>${S.adv}<div class="ibtns">${S.ib.map(b => `<div>${b}</div>`).join("")}</div></div>`, m, at(5, .4));
+  window.cashT = at(5, 2.0);
+  // step 7: tips, then end card
+  $("tips").dataset.in = at(6, .3); $("tips").dataset.out = starts[7] + .4;
+  S.tips.forEach((tx, j) => { const sp = tx.indexOf(" ");
+    el(`<div class="tip"><span class="e">${tx.slice(0, sp)}</span>${tx.slice(sp + 1)}</div>`, $("tips"), at(6, .5 + j * 2.2)); });
+  $("end").innerHTML = `<div class="logo">🌾</div><h1>${S.end}</h1><div class="s">${S.endS}</div><div class="h">@SellSmartKisanBot</div>`;
+  $("end").dataset.in = starts[7];
+  return total;
+}
+function seek(t) {
+  const i = Math.max(0, starts.filter(s => s <= t).length - 1);
+  const si = Math.min(i, 6); $("n").textContent = si + 1; $("capt").textContent = S.caps[si];
+  const pop = Math.min(1, (t - starts[si]) / .3); $("num").style.transform = `scale(${.7 + .3 * pop})`;
+  $("bar").style.width = (100 * t / total) + "%";
+  for (const e of document.querySelectorAll("[data-in]")) {
+    const vis = t >= +e.dataset.in && t < +(e.dataset.out || 1e9);
+    e.style.display = vis ? "" : "none";
+    if (vis && !e.dataset.nofade) { const p = Math.min(1, (t - e.dataset.in) / .35);
+      e.style.opacity = p; e.style.transform = e.dataset.layout ? `translateY(${(1 - p) * 24}px)` : ""; }
+  }
+  for (const y of typing) {
+    const n = Math.round(Math.max(0, Math.min(1, (t - y.a) / (y.b - y.a))) * y.text.length);
+    const txt = (y.clear && t >= y.clear) ? "" : [...y.text].slice(0, n).join("");
+    y.e.textContent = txt || y.e.dataset.ph || ""; y.e.classList.toggle("t", !!txt);
+  }
+  const cash = $("cash"); if (cash) { const p = t - window.cashT;
+    cash.style.background = p > 0 ? `rgba(255,202,40,${Math.min(1, p / .4) * (.55 + .35 * Math.sin(p * 4))})` : ""; }
+  const f = $("finger"), r = $("ring"); f.style.display = r.style.display = "none";
+  for (const tp of taps) {
+    tp.e.classList.toggle("pressed", t >= tp.t && (tp.keep || t < tp.t + .35));
+    if (t < tp.t - .9 || t > tp.t + .5) continue;
+    const b = tp.e.getBoundingClientRect(), cx = b.left + b.width / 2, cy = b.top + b.height / 2;
+    const k = Math.min(1, (t - (tp.t - .9)) / .7), ease = 1 - (1 - k) ** 3;
+    f.style.display = "";
+    f.style.left = (cx - 22 + (1 - ease) * 140) + "px"; f.style.top = (cy - 6 + (1 - ease) * 220) + "px";
+    f.style.transform = `scale(${t >= tp.t && t < tp.t + .2 ? .85 : 1})`;
+    if (t >= tp.t - .1) { const q = Math.min(1, (t - tp.t + .1) / .5), R = 30 + q * 50;
+      r.style.display = ""; r.style.opacity = 1 - q; r.style.width = r.style.height = 2 * R + "px";
+      r.style.left = cx - R + "px"; r.style.top = cy - R + "px"; }
+  }
+}
+// live preview: scene.html?lang=mr
+const qs = new URLSearchParams(location.search);
+if (qs.get("lang")) { const T = setup(qs.get("lang"), [9,7,7,7,6,10,8,5]); const t0 = performance.now();
+  (function loop(){ seek(((performance.now() - t0) / 1000) % T); requestAnimationFrame(loop); })(); }
+</script></body></html>

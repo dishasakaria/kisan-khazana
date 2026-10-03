@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sell Smart · FPO</title>
+<meta name="theme-color" content="#1f6b2e">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Mukta:wght@400;500;600;700;800&display=swap">
+<link rel="icon" href="/app/icon.svg"><link rel="stylesheet" href="/app/style.css">
+<link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.146/Build/Cesium/Widgets/widgets.css">
+<script src="https://cesium.com/downloads/cesiumjs/releases/1.146/Build/Cesium/Cesium.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><img src="/app/icon.svg" alt="">Sell<b>Smart</b></a>
+  <nav class="links"><a href="/app/fpo.html" aria-current="page" data-i18n="nav_fpo"></a></nav>
+  <span id="demo" class="demo" data-i18n="demo"></span>
+  <div class="langs"><button data-lang="mr">मराठी</button><button data-lang="hi">हिंदी</button><button data-lang="en">EN</button></div>
+</div></header>
+<main class="wrap">
+  <div class="fpo-head">
+    <div><span class="eyebrow"><span class="dot"></span>Live</span><h1 data-i18n="nav_fpo"></h1><div class="muted small" data-i18n="pilot"></div></div>
+  </div>
+  <div class="card toolbar">
+    <div><label for="crop" data-i18n="crop"></label><select id="crop"></select></div>
+    <div><label for="mandiSel" data-i18n="mandi"></label><select id="mandiSel"></select></div>
+    <div class="day"><label for="day"><span data-i18n="day"></span>: <b id="dayLbl"></b></label>
+      <input id="day" type="range" min="0" max="21" step="7" value="0">
+      <div class="ticks"><span data-i18n="today"></span><span>+7</span><span>+14</span><span>+21</span></div></div>
+  </div>
+
+  <div class="kpis">
+    <div class="card kpi"><div class="ico">🏆</div><div><div class="big num" id="k_best">—</div><div class="muted" id="k_best_l"></div></div></div>
+    <div class="card kpi"><div class="ico">🏪</div><div><div class="big num" id="k_mandis">—</div><div class="muted" data-i18n="kpi_mandis"></div></div></div>
+    <div class="card kpi"><div class="ico">📦</div><div><div class="big num" id="k_stock">—</div><div class="muted" data-i18n="kpi_stock"></div></div></div>
+    <div class="card kpi"><div class="ico">🚚</div><div><div class="big num" id="k_save">—</div><div class="muted" data-i18n="kpi_save"></div></div></div>
+  </div>
+
+  <div class="dash">
+    <section class="card full mapcard">
+      <div class="ch"><div class="ico">🗺️</div><div><h2 data-i18n="map_title"></h2><div class="muted" data-i18n="map_hint"></div></div></div>
+      <div id="map">
+        <div class="legend"><i style="background:#3d9a3a"></i><span data-i18n="conf_hi"></span><i style="background:#d9a21b"></i><span data-i18n="conf_mid"></span><i style="background:#c8452f"></i><span data-i18n="conf_lo"></span></div>
+        <div id="popup" class="popup" hidden></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="ch"><div class="ico">📈</div><h2><span data-i18n="fc_title"></span> — <span id="fcHead"></span></h2></div>
+      <div class="chartbox"><canvas id="chart"></canvas></div>
+      <div class="scroll"><table id="fcTable"></table></div>
+    </section>
+
+    <section class="card">
+      <div class="ch"><div class="ico">📲</div><div><h2><span class="dot"></span><span data-i18n="live_title"></span></h2><div class="muted" data-i18n="live_sub"></div></div></div>
+      <ul id="live" class="list feed"></ul>
+    </section>
+
+    <section class="card">
+      <div class="ch"><div class="ico">🚚</div><h2 data-i18n="cp_title"></h2></div>
+      <ul id="carpools" class="list"></ul>
+    </section>
+
+    <section class="card full">
+      <div class="ch"><div class="ico">📦</div><h2 data-i18n="st_title"></h2></div>
+      <div class="scroll"><table id="stock"></table></div>
+    </section>
+  </div>
+</main>
+<footer>Sell Smart · FPO</footer>
+<script src="/app/common.js"></script>
+<script>
+const S = { crops: [], mandis: [], fc: [], crop: null, day: 0, sel: null, live: [], carpools: [], stock: [] };
+let viewer = null, chart = null;
+const H = [0, 7, 14, 21];
+const mandiBy = m => S.mandis.find(x => x.market === m) || { market: m };
+const fcFor = (m, h) => S.fc.find(r => r.market === m && r.horizon_days === h);
+const conf = r => !r || !r.p50 ? 2 : (r.p90 - r.p10) / r.p50 < 0.2 ? 0 : (r.p90 - r.p10) / r.p50 < 0.35 ? 1 : 2;
+const CONF_CSS = ["#3d9a3a", "#d9a21b", "#c8452f"];
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+// ---------- 3D map ----------
+function initMap() {
+  if (!window.Cesium) return noMap();
+  try {
+    viewer = new Cesium.Viewer("map", {
+      // no ion token: Esri World Imagery tiles straight from ArcGIS, plain ellipsoid terrain
+      baseLayer: new Cesium.ImageryLayer(new Cesium.UrlTemplateImageryProvider({
+        url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+        maximumLevel: 18, credit: "Esri, Maxar, Earthstar Geographics" })),
+      baseLayerPicker: false, geocoder: false, animation: false, timeline: false, homeButton: false, sceneModePicker: false,
+      navigationHelpButton: false, fullscreenButton: false, infoBox: false, selectionIndicator: false, requestRenderMode: true,
+    });
+    viewer.scene.globe.enableLighting = false;
+    viewer.camera.setView({ destination: Cesium.Cartesian3.fromDegrees(74.3, 16.95, 230000),
+      orientation: { heading: 0, pitch: Cesium.Math.toRadians(-40), roll: 0 } });
+    new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas).setInputAction(e => {
+      const p = viewer.scene.pick(e.position);
+      if (p && p.id && p.id.id) select(p.id.id.slice(2), true);
+    }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+  } catch (e) { console.warn(e); noMap(); }
+}
+function noMap() { viewer = null; $("#map").insertAdjacentHTML("beforeend", `<div class="nomap" data-i18n="nomap">${t("nomap")}</div>`); }
+
+function drawPillars() {
+  if (!viewer) return;
+  viewer.entities.removeAll();
+  const max = Math.max(1, ...S.fc.map(r => r.p90 || r.p50)), floor = 0.8 * Math.min(...S.fc.map(r => r.p10 || r.p50));
+  const C = [Cesium.Color.fromCssColorString(CONF_CSS[0]), Cesium.Color.fromCssColorString(CONF_CSS[1]), Cesium.Color.fromCssColorString(CONF_CSS[2])];
+  for (const m of S.mandis) {
+    const r = fcFor(m.market, S.day);
+    if (!r) continue;
+    // ponytail: height from 80% of the lowest P10, so ₹100 gaps are visible; labels carry the real ₹
+    const len = 4000 + Math.max(0, r.p50 - floor) / (max - floor || 1) * 45000;
+    const sel = S.sel === m.market;
+    viewer.entities.add({
+      id: "p_" + m.market,
+      position: Cesium.Cartesian3.fromDegrees(m.lon, m.lat, len / 2),
+      cylinder: { length: len, topRadius: sel ? 4600 : 3200, bottomRadius: sel ? 4600 : 3200, material: C[conf(r)].withAlpha(sel ? 1 : 0.8) },
+    });
+    // ponytail: two single-line labels; Cesium mis-wraps "\n" inside Devanagari strings
+    const lbl = (text, px, y) => viewer.entities.add({ id: (y ? "n_" : "l_") + m.market, position: Cesium.Cartesian3.fromDegrees(m.lon, m.lat, len + 1500),
+      label: { text, font: `700 ${px}px 'Noto Sans', 'Noto Sans Devanagari', sans-serif`, fillColor: Cesium.Color.WHITE,
+               outlineColor: Cesium.Color.BLACK, outlineWidth: 3, style: Cesium.LabelStyle.FILL_AND_OUTLINE, pixelOffset: new Cesium.Cartesian2(0, y),
+               verticalOrigin: Cesium.VerticalOrigin.BOTTOM, disableDepthTestDistance: Number.POSITIVE_INFINITY,
+               scaleByDistance: new Cesium.NearFarScalar(1e5, 1.1, 6e5, 0.7) } });
+    lbl(rs(r.p50), sel ? 20 : 17, 0);
+    lbl(mandiName(m), 15, -22);
+  }
+  viewer.scene.requestRender();
+}
+
+function popup() {
+  const el = $("#popup");
+  if (!S.sel || !S.popup) { el.hidden = true; return; }
+  const m = mandiBy(S.sel), today = fcFor(S.sel, 0);
+  el.innerHTML = `<button class="x" aria-label="close">×</button>
+    <h3>${esc(mandiName(m))}</h3><div class="muted small">${esc(districtName(m.district || ""))} · ${esc(cropName(S.crop))}</div>
+    <div class="big">${rs(today && today.p50)}</div><div class="muted small">${t("today")} · ${t("per_qtl")}</div>
+    <table><tr><th>${t("horizon")}</th><th class="r">P50</th><th class="r">P10–P90</th></tr>
+    ${H.slice(1).map(h => { const r = fcFor(S.sel, h); return r ? `<tr><td>+${h}</td><td class="r num">${rs(r.p50)}</td><td class="r num">${rs(r.p10)}–${rs(r.p90)}</td></tr>` : ""; }).join("")}</table>`;
+  el.querySelector(".x").onclick = () => { S.popup = false; el.hidden = true; };
+  el.hidden = false;
+}
+
+// ---------- forecast table + chart ----------
+function forecastPanel() {
+  const m = mandiBy(S.sel), rows = H.map(h => fcFor(S.sel, h)).filter(Boolean);
+  $("#fcHead").textContent = mandiName(m) + " · " + cropName(S.crop);
+  $("#fcTable").innerHTML = `<tr><th>${t("horizon")}</th><th>${t("date")}</th><th class="r">${t("expected")}</th><th class="r">${t("range")}</th></tr>` +
+    rows.map(r => `<tr${r.horizon_days === S.day ? ' style="background:var(--chip)"' : ""}><td>${r.horizon_days ? t("in_days", { d: r.horizon_days }) : t("today")}</td>
+      <td>${fmtDate(r.target_date)}</td><td class="r num"><b>${rs(r.p50)}</b></td><td class="r num">${r.horizon_days ? rs(r.p10) + "–" + rs(r.p90) : "—"}</td></tr>`).join("");
+  const labels = rows.map(r => r.horizon_days ? "+" + r.horizon_days : t("today"));
+  const green = css("--green"), ink = css("--muted"), line = css("--line");
+  const data = {
+    labels,
+    datasets: [
+      { label: "P10", data: rows.map(r => r.p10), borderWidth: 0, pointRadius: 0, fill: false },
+      { label: t("range"), data: rows.map(r => r.p90), borderWidth: 0, pointRadius: 0, fill: "-1", backgroundColor: green + "33" },
+      { label: t("expected"), data: rows.map(r => r.p50), borderColor: green, backgroundColor: green, borderWidth: 2.5, pointRadius: 4, tension: .25 },
+    ],
+  };
+  if (!window.Chart) return; // CDN blocked: table still works
+  if (chart) { chart.data = data; chart.update(); return; }
+  chart = new Chart($("#chart"), { type: "line", data, options: {
+    responsive: true, maintainAspectRatio: false, animation: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => c.dataset.label + ": " + rs(c.parsed.y) } } },
+    scales: { y: { ticks: { color: ink, callback: v => rs(v) }, grid: { color: line } }, x: { ticks: { color: ink }, grid: { display: false } } },
+  } });
+}
+
+// ---------- side panels ----------
+function livePanel() {
+  const ago = s => { const m = Math.max(0, Math.round((Date.now() - new Date(s)) / 60000));
+    return m < 60 ? t("ago_m", { n: m }) : m < 1440 ? t("ago_h", { n: Math.round(m / 60) }) : fmtDate(s.slice(0, 10)); };
+  $("#live").innerHTML = S.live.length ? S.live.map(r => `<li><span>${cropIcon(r.commodity)} <b>${esc(cropName(r.commodity))}</b> <span class="num">${num(r.qty_qtl)} ${t("qtl")}</span>
+      → ${esc(mandiName(mandiBy(r.mandi)))} <span class="badge ${r.action === "hold" ? "fair" : "good"}">${t(r.action) }</span></span>
+      <span class="muted small num">${ago(r.created_at)}</span></li>`).join("") : `<li class="empty">${t("none")}</li>`;
+}
+function carpoolPanel() {
+  $("#carpools").innerHTML = S.carpools.length ? S.carpools.map(r => `<li>
+    <div style="display:flex;justify-content:space-between;gap:8px"><b>${esc(mandiName(mandiBy(r.mandi)))} · ${fmtDate(r.date)}</b>
+    <span class="num" style="color:var(--green);font-weight:800">${t("saving")} ${rs(r.saving_rs)}</span></div>
+    <div class="muted small">${r.farmers} ${t("farmers")} · ${t("total_qty")} ${num(r.total_qty_qtl)} ${t("qtl")} · ${num(r.km_span)} km ${t("span")} · ${esc(r.vehicle)}</div></li>`).join("")
+    : `<li class="empty">${t("none")}</li>`;
+}
+function stockPanel() {
+  $("#stock").innerHTML = `<tr><th>${t("crop")}</th><th class="r">${t("qty")}</th><th>${t("district")}</th><th>${t("condition")}</th><th class="r">${t("spoil")}</th><th>${t("ready")}</th></tr>` +
+    (S.stock.length ? S.stock.map(r => { const sp = r.spoil_rate_per_day * 100, c = sp < 0.5 ? "good" : sp < 1.2 ? "fair" : "poor";
+      return `<tr><td>${cropIcon(r.crop)} ${esc(cropName(r.crop))}</td><td class="r num"><b>${num(r.qty_qtl)}</b></td><td>${esc(districtName(r.district))}</td>
+      <td><span class="badge ${esc(r.condition)}">${esc(STR[r.condition] ? t(r.condition) : r.condition)}</span></td>
+      <td class="r"><span class="badge ${c}">${sp.toFixed(1)}%${t("per_day")}</span></td><td>${fmtDate(r.ready_date)}</td></tr>`; }).join("")
+    : `<tr><td colspan="6" class="empty">${t("none")}</td></tr>`);
+}
+
+function kpiPanel() {
+  const today = S.mandis.map(m => [m, fcFor(m.market, S.day)]).filter(([, r]) => r && r.p50);
+  const best = today.sort((a, b) => b[1].p50 - a[1].p50)[0];
+  $("#k_best").textContent = best ? rs(best[1].p50) : "—";
+  $("#k_best_l").textContent = t("kpi_best") + (best ? " · " + mandiName(best[0]) : "");
+  $("#k_mandis").textContent = today.length;
+  const stock = S.stock.reduce((s, r) => s + (r.qty_qtl || 0), 0), save = S.carpools.reduce((s, r) => s + (r.saving_rs || 0), 0);
+  $("#k_stock").textContent = stock ? num(stock) + " " + t("qtl") : "—";
+  $("#k_save").textContent = save ? rs(save) : "—";
+}
+
+// ---------- state changes ----------
+function select(m, showPopup) {
+  S.sel = m; S.popup = showPopup || S.popup;
+  $("#mandiSel").value = m;
+  drawPillars(); popup(); forecastPanel();
+}
+function renderAll() {
+  $("#crop").innerHTML = S.crops.map(c => `<option value="${esc(c)}">${esc(cropName(c))}</option>`).join("");
+  $("#crop").value = S.crop;
+  const withFc = S.mandis.filter(m => fcFor(m.market, 0) || fcFor(m.market, 7));
+  $("#mandiSel").innerHTML = withFc.map(m => `<option value="${esc(m.market)}">${esc(mandiName(m))}</option>`).join("");
+  $("#mandiSel").value = S.sel;
+  $("#dayLbl").textContent = S.day ? t("in_days", { d: S.day }) : t("today");
+  drawPillars(); popup(); forecastPanel(); livePanel(); carpoolPanel(); stockPanel(); kpiPanel();
+}
+async function loadCrop() {
+  [S.fc, S.carpools] = await Promise.all([api("forecasts", { crop: S.crop }), api("carpools", { crop: S.crop })]);
+  const has = S.mandis.filter(m => fcFor(m.market, 0) || fcFor(m.market, 7));
+  if (!has.some(m => m.market === S.sel)) S.sel = (has.find(m => m.market === "Lasalgaon") || has[0] || {}).market;
+  renderAll();
+}
+async function refreshLive() { S.live = await api("live"); livePanel(); }
+
+$("#crop").onchange = e => { S.crop = e.target.value; loadCrop(); };
+$("#mandiSel").onchange = e => select(e.target.value, false);
+$("#day").oninput = e => { S.day = +e.target.value; renderAll(); };
+
+(async () => {
+  initLang(renderAll);
+  initMap();
+  [S.crops, S.mandis, S.live, S.stock] = await Promise.all(["crops", "mandis", "live", "stock"].map(n => api(n)));
+  S.crop = S.crops.includes("Onion") ? "Onion" : S.crops[0];
+  await loadCrop();
+  setInterval(refreshLive, 15000);
+})();
+</script>
+</body>
+</html>

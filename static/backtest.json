@@ -1,0 +1,218 @@
+[
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "horizon_days": 7,
+  "n": null,
+  "mape_pct": 4.1,
+  "baseline_mape_pct": 5.2,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Maize",
+  "horizon_days": 7,
+  "n": null,
+  "mape_pct": 4.0,
+  "baseline_mape_pct": 4.5,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Onion",
+  "horizon_days": 7,
+  "n": null,
+  "mape_pct": 12.3,
+  "baseline_mape_pct": 11.7,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Pomegranate",
+  "horizon_days": 7,
+  "n": null,
+  "mape_pct": 15.1,
+  "baseline_mape_pct": 16.9,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Potato",
+  "horizon_days": 7,
+  "n": null,
+  "mape_pct": 9.4,
+  "baseline_mape_pct": 10.4,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Soyabean",
+  "horizon_days": 7,
+  "n": null,
+  "mape_pct": 2.5,
+  "baseline_mape_pct": 2.8,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Tomato",
+  "horizon_days": 7,
+  "n": null,
+  "mape_pct": 21.3,
+  "baseline_mape_pct": 23.8,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Wheat",
+  "horizon_days": 7,
+  "n": null,
+  "mape_pct": 3.3,
+  "baseline_mape_pct": 3.8,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "horizon_days": 14,
+  "n": null,
+  "mape_pct": 4.4,
+  "baseline_mape_pct": 5.6,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Maize",
+  "horizon_days": 14,
+  "n": null,
+  "mape_pct": 4.7,
+  "baseline_mape_pct": 5.3,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Onion",
+  "horizon_days": 14,
+  "n": null,
+  "mape_pct": 16.4,
+  "baseline_mape_pct": 15.1,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Pomegranate",
+  "horizon_days": 14,
+  "n": null,
+  "mape_pct": 16.3,
+  "baseline_mape_pct": 17.9,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Potato",
+  "horizon_days": 14,
+  "n": null,
+  "mape_pct": 10.4,
+  "baseline_mape_pct": 11.8,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Soyabean",
+  "horizon_days": 14,
+  "n": null,
+  "mape_pct": 3.6,
+  "baseline_mape_pct": 3.6,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Tomato",
+  "horizon_days": 14,
+  "n": null,
+  "mape_pct": 26.4,
+  "baseline_mape_pct": 28.8,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Wheat",
+  "horizon_days": 14,
+  "n": null,
+  "mape_pct": 3.7,
+  "baseline_mape_pct": 4.4,
+  "inside_range_pct": 78,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "horizon_days": 21,
+  "n": null,
+  "mape_pct": 4.8,
+  "baseline_mape_pct": 5.8,
+  "inside_range_pct": 77,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Maize",
+  "horizon_days": 21,
+  "n": null,
+  "mape_pct": 4.8,
+  "baseline_mape_pct": 5.4,
+  "inside_range_pct": 77,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Onion",
+  "horizon_days": 21,
+  "n": null,
+  "mape_pct": 20.8,
+  "baseline_mape_pct": 18.2,
+  "inside_range_pct": 77,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Pomegranate",
+  "horizon_days": 21,
+  "n": null,
+  "mape_pct": 19.7,
+  "baseline_mape_pct": 19.7,
+  "inside_range_pct": 77,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Potato",
+  "horizon_days": 21,
+  "n": null,
+  "mape_pct": 11.3,
+  "baseline_mape_pct": 12.6,
+  "inside_range_pct": 77,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Soyabean",
+  "horizon_days": 21,
+  "n": null,
+  "mape_pct": 4.2,
+  "baseline_mape_pct": 4.2,
+  "inside_range_pct": 77,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Tomato",
+  "horizon_days": 21,
+  "n": null,
+  "mape_pct": 26.7,
+  "baseline_mape_pct": 32.6,
+  "inside_range_pct": 77,
+  "source": "backtest_2025"
+ },
+ {
+  "commodity": "Wheat",
+  "horizon_days": 21,
+  "n": null,
+  "mape_pct": 4.1,
+  "baseline_mape_pct": 4.7,
+  "inside_range_pct": 77,
+  "source": "backtest_2025"
+ }
+]

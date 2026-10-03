@@ -1,0 +1,2 @@
+{"name": "Sell Smart — FPO", "short_name": "Sell Smart", "start_url": "/app/fpo.html", "display": "standalone",
+ "background_color": "#faf6ec", "theme_color": "#1f6b2e", "icons": [{"src": "/app/icon.svg", "sizes": "any", "type": "image/svg+xml"}]}

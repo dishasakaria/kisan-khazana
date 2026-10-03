@@ -1,0 +1,31 @@
+name: Daily data refresh
+
+on:
+  schedule:
+    - cron: "30 13 * * *"   # 19:00 IST, after mandis report the day's arrivals
+  workflow_dispatch: {}     # "Run workflow" button (live demo)
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: MSAMB live prices (APMC + private markets + direct buyers)
+        run: python msamb.py
+      - name: Weather (last 14 days + 16-day forecast)
+        run: python weather.py recent
+      - name: Agmarknet (pull last 7 days if the API is back)
+        run: |
+          if python agmarknet.py check; then python agmarknet.py $(date -d '7 days ago' +%F) $(date +%F); fi
+        continue-on-error: true
+      - name: eNAM (pull last 7 days if its server is back)
+        run: |
+          if python enam.py check; then python enam.py $(date -d '7 days ago' +%F) $(date +%F); fi
+        continue-on-error: true

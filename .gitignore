@@ -1,0 +1,5 @@
+diesel_cache.json
+__pycache__/
+.env
+.env.*
+data/

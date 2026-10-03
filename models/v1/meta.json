@@ -1,0 +1,91 @@
+{
+ "features": [
+  "ret_1",
+  "ret_7",
+  "ret_14",
+  "ret_28",
+  "dev_ma7",
+  "dev_ma30",
+  "vol_30",
+  "yoy",
+  "gap_crop",
+  "crop_ret_7",
+  "season_sin",
+  "season_cos",
+  "dow",
+  "days_to_diwali",
+  "rain_7",
+  "rain_30",
+  "rain_next_7",
+  "tmax_7",
+  "commodity",
+  "market"
+ ],
+ "horizons": [
+  7,
+  14,
+  21
+ ],
+ "quantiles": [
+  0.1,
+  0.5,
+  0.9
+ ],
+ "results": {
+  "7": {
+   "model": 15.882087426834463,
+   "same_price": 17.39681203337055,
+   "past_years": 21.93918976766741,
+   "coverage_10_90": 79.02095590665698,
+   "test_rows": 90762,
+   "model_plus_fallback": 15.895976617575489,
+   "fallback_crops": [
+    "Banana",
+    "Castor Seed",
+    "Jack Fruit",
+    "Karbuja (Musk Melon)",
+    "Lentil (Masur)(Whole)",
+    "Mango"
+   ]
+  },
+  "14": {
+   "model": 19.465923707878478,
+   "same_price": 21.049734416824908,
+   "past_years": 26.35430751881134,
+   "coverage_10_90": 78.59694193737394,
+   "test_rows": 88749,
+   "model_plus_fallback": 19.518603691075644,
+   "fallback_crops": [
+    "Castor Seed",
+    "Chikoos (Sapota)",
+    "Green Gram (Moong)(Whole)",
+    "Jack Fruit",
+    "Karbuja (Musk Melon)",
+    "Lentil (Masur)(Whole)",
+    "Tamarind Seed",
+    "Water Melon"
+   ]
+  },
+  "21": {
+   "model": 21.746007343756048,
+   "same_price": 23.652878420599304,
+   "past_years": 29.11937764982153,
+   "coverage_10_90": 78.46868878869714,
+   "test_rows": 86279,
+   "model_plus_fallback": 21.83526978663838,
+   "fallback_crops": [
+    "Amla (Nelli Kai)",
+    "Chikoos (Sapota)",
+    "Grapes",
+    "Green Gram (Moong)(Whole)",
+    "Guava",
+    "Karbuja (Musk Melon)",
+    "Papaya",
+    "Pomegranate",
+    "Soyabean",
+    "Tender Coconut"
+   ]
+  }
+ },
+ "engine": "lightgbm"
+}

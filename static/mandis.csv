@@ -1,0 +1,68 @@
+market,district,lat,lon,query,name_mr,name_hi
+Ahmednagar,Ahmednagar,19.1627725,74.8580243,Ahmednagar Ahmednagar,अहमदनगर,अहमदनगर
+Akole,Ahmednagar,19.5388871,73.9978782,Akole Ahmednagar,अकोले,अकोले
+Baramati,Pune,18.2198538,74.4534054,Baramati Pune,बारामती,बारामती
+Bhor,Pune,18.2127607,73.8163663,Bhor Pune,भोर,भोर
+Chandvad,Nashik,20.3278147,74.2387228,Chandvad Nashik,चांदवड,चांदवड
+Devala,Nashik,20.5256905,74.3464549,Deola Nashik,देवळा,देवला
+Dindori,Nashik,20.0443391,73.8056814,Dindori Nashik,दिंडोरी,दिंडोरी
+Dindori (Vani),Nashik,20.3306136,73.8894554,Vani Dindori,दिंडोरी (वणी),दिंडोरी (वणी)
+Dound,Pune,18.4834351,74.3621686,Daund Pune,दौंड,दौंड
+Ghoti,Nashik,19.7167761,73.6244742,Ghoti Nashik,घोटी,घोटी
+Indapur,Pune,18.1125305,74.9238654,Indapur Pune,इंदापूर,इंदापूर
+Indapur (Bhigwan),Pune,18.2977007,74.7549847,Bhigwan Indapur,इंदापूर (भिगवण),इंदापूर (भिगवण)
+Indapur (Nimgaon Ketki),Pune,18.08329,74.909647,Nimgaon Ketki Indapur,इंदापूर (निमगाव केतकी),इंदापूर (निमगाव केतकी)
+Jamkhed,Ahmednagar,18.7342421,75.3139968,Jamkhed Ahmednagar,जामखेड,जामखेड
+Junnar,Pune,19.2094471,73.8771937,Junnar Pune,जुन्नर,जुन्नर
+Junnar (Alephata),Pune,19.1714,74.1166,manual override,जुन्नर (आळेफाटा),जुन्नर (आलेफाटा)
+Junnar (Bhlhe),Pune,19.1156901,74.1754383,Belhe Junnar,जुन्नर (बेल्हे),जुन्नर (बेल्हे)
+Junnar (Narayangaon),Pune,19.1202895,73.9732877,Narayangaon Junnar,जुन्नर (नारायणगाव),जुन्नर (नारायणगाव)
+Junnar (Otur),Pune,19.2633563,73.9805419,Otur Junnar,जुन्नर (ओतूर),जुन्नर (ओतूर)
+Kalvan,Nashik,20.4887452,74.0192793,Kalwan Nashik,कळवण,कलवण
+Karjat,Ahmednagar,18.5451073,75.0052748,Karjat Ahmednagar,कर्जत,कर्जत
+Khed,Pune,18.6594055,73.9537592,Khed Pune,खेड,खेड
+Khed (Chakan),Pune,18.7623111,73.8625448,Chakan Khed,खेड (चाकण),खेड (चाकण)
+Kopargaon,Ahmednagar,19.8894649,74.4586598,Kopargaon Ahmednagar,कोपरगाव,कोपरगाव
+Lasalgaon,Nashik,20.1426837,74.2377507,Lasalgaon Nashik,लासलगाव,लासलगाव
+Lasalgaon (Niphad),Nashik,20.0797,74.1071,manual override,लासलगाव (निफाड),लासलगाव (निफाड)
+Lasalgaon (Vinchur),Nashik,20.1053152,74.2252387,Vinchur Nashik,लासलगाव (विंचूर),लासलगाव (विंचूर)
+Malegaon,Nashik,20.5576062,74.5246514,Malegaon Nashik,मालेगाव,मालेगाव
+Malharshree Farmers Producer Co Ltd,Nashik,,,Malharshree Farmers Producer Co Ltd,मल्हर्श्री फार्मर्स प्रोड्यूसर कंपनी लि,मल्हारश्री फार्मर्स प्रोड्यूसर कंपनी लिमिटेड
+Manchar,Pune,19.0033298,73.942711,Manchar Pune,मंचर,मंचर
+Mankamneshwar Farmar Producer Coltd Sanchalit Mank,Nashik,,,Mankamneshwar Farmar Producer Coltd Sanchalit Mank,मंकमनेश्वर फार्मर प्रोड्यूसर कोलट्‌ डिरेक्टेड मंक,मनकामेश्वर फ़ार्मर प्रोड्यूसर कोलट्डी संचालित मैन
+Manmad,Nashik,20.2501817,74.439395,Manmad Nashik,मनमाड,मनमाड
+Nampur,Nashik,20.7295457,74.3109024,Nampur Nashik,नामपूर,नामपूर
+Nandgaon,Nashik,20.3094018,74.6597622,Nandgaon Nashik,नांदगाव,नांदगाव
+Nashik (Devlali),Nashik,19.8965492,73.8367402,Devlali Nashik,नाशिक (देवळाली),नाशिक (देवलाली)
+Nasik,Nashik,20.0112475,73.7902364,Nashik Nashik,नाशिक,नाशिक
+Newasa,Ahmednagar,19.5540623,74.9251518,Newasa Ahmednagar,नेवासा,नेवासा
+Newasa (Ghodegaon),Ahmednagar,19.3496722,74.8811801,Ghodegaon Newasa,नेवासा (घोडेगाव),नेवासा (घोडेगाव)
+Nira,Pune,18.1111969,74.2041596,Nira Pune,नीरा,नीरा
+Nira (Saswad),Pune,18.3444,74.0295,manual override,नीरा (सासवड),नीरा (सासवड)
+Om Chaitanya Multistate Agro Purpose Coop Society,Ahmednagar,,,Om Chaitanya Multistate Agro Purpose Coop Society,ओम चैतन्य मल्टीस्टेट अ‍ॅग्रो पर्पज कोऑपरेटिव्ह सोसायटी,ओम चैतन्य मल्टीस्टेट एग्रो पर्पस को-ऑप सोसाइटी
+Parner,Ahmednagar,18.9957757,74.4496858,Parner Ahmednagar,पारनेर,पारनेर
+Pathardi,Ahmednagar,19.170249,75.173563,Pathardi Ahmednagar,पाथर्डी,पाथर्डी
+Pimpalgaon,Nashik,20.163372,73.9850591,Pimpalgaon Baswant Nashik,पिंपळगाव बसवंत,पिंपलगाव बसवंत
+Pimpalgaon Baswant (Saykheda),Nashik,20.163372,73.9850591,Saykheda Pimpalgaon Baswant,पिंपळगाव बसवंत (सायखेडा),पिंपलगाव बसवंत (सायखेडा)
+Pune,Pune,18.5213738,73.8545071,Pune Pune,पुणे,पुणे
+Pune (Khadiki),Pune,18.5622885,73.842095,Khadiki Pune,पुणे (खडकी),पुणे (खडकी)
+Pune (Manjri),Pune,18.5000812,73.968206,Manjri Pune,पुणे (मांजरी),पुणे (मांजरी)
+Pune (Moshi),Pune,18.6879806,73.8343544,Moshi Pune,पुणे (मोशी),पुणे (मोशी)
+Pune (Pimpri),Pune,18.6231854,73.8019932,Pimpri Pune,पुणे (पिंपरी),पुणे (पिंपरी)
+Rahata,Ahmednagar,19.7081418,74.4797304,Rahata Ahmednagar,राहाता,राहाता
+Rahuri,Ahmednagar,19.396436,74.6471483,Rahuri Ahmednagar,राहुरी,राहुरी
+Rahuri (Vambori),Ahmednagar,19.2984759,74.6850072,Vambori Rahuri,राहुरी (वांबोरी),राहुरी (वांबोरी)
+Sangamner,Ahmednagar,19.574168,74.2055708,Sangamner Ahmednagar,संगमनेर,संगमनेर
+Satana,Nashik,20.5991006,74.2021078,Satana Nashik,सटाणा,सटाणा
+Shevgaon,Ahmednagar,19.355818,75.223998,Shevgaon Ahmednagar,शेवगाव,शेवगाव
+Shevgaon (Bodhegaon),Ahmednagar,19.3063337,75.4453271,Bodhegaon Shevgaon,शेवगाव (बोधेगाव),शेवगाव (बोधेगाव)
+Shirur,Pune,18.7610989,74.209529,Shirur Pune,शिरूर,शिरूर
+Shree Rameshwar Krushi Market,Nashik,,,Shree Rameshwar Krushi Market,श्री रामेश्वर कृषी मार्केट,श्री रामेश्वर कृषि मार्केट
+Shree Sairaj Krushi Market,Ahmednagar,,,Shree Sairaj Krushi Market,श्री साईराज कृषी मार्केट,श्री साईराज कृषि मार्केट
+Shrigonda,Ahmednagar,18.6143982,74.6990002,Shrigonda Ahmednagar,श्रीगोंदा,श्रीगोंदा
+Shrigonda (Gogargaon),Ahmednagar,18.6145198,74.6990672,Gogargaon Shrigonda Shrigonda,श्रीगोंदा (गोगरगाव),श्रीगोंदा (गोगरगाव)
+Shrirampur,Ahmednagar,19.620687,74.688651,Shrirampur Ahmednagar,श्रीरामपूर,श्रीरामपूर
+Shrirampur (Belapur),Ahmednagar,19.6197639,74.6599008,Belapur Shrirampur,श्रीरामपूर (बेलापूर),श्रीरामपूर (बेलापूर)
+Sinner,Nashik,19.8453138,74.0000241,Sinnar Nashik,सिन्नर,सिन्नर
+Umrane,Nashik,20.42407,74.346869,Umrane Nashik,उमराणे,उमराणे
+Yeola,Nashik,20.0429079,74.4880389,Yeola Nashik,येवला,येवला

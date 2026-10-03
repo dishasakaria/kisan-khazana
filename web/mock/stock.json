@@ -1,0 +1,98 @@
+[
+ {
+  "crop": "Wheat",
+  "qty_qtl": 35,
+  "district": "Nashik",
+  "condition": "good",
+  "spoil_rate_per_day": 0.0026,
+  "ready_date": "2026-10-13"
+ },
+ {
+  "crop": "Maize",
+  "qty_qtl": 20,
+  "district": "Nashik",
+  "condition": "poor",
+  "spoil_rate_per_day": 0.0232,
+  "ready_date": "2026-10-12"
+ },
+ {
+  "crop": "Onion",
+  "qty_qtl": 120,
+  "district": "Pune",
+  "condition": "good",
+  "spoil_rate_per_day": 0.0029,
+  "ready_date": "2026-10-09"
+ },
+ {
+  "crop": "Bengal Gram (Gram)(Whole)",
+  "qty_qtl": 120,
+  "district": "Pune",
+  "condition": "fair",
+  "spoil_rate_per_day": 0.0073,
+  "ready_date": "2026-10-05"
+ },
+ {
+  "crop": "Wheat",
+  "qty_qtl": 50,
+  "district": "Ahmednagar",
+  "condition": "fair",
+  "spoil_rate_per_day": 0.0081,
+  "ready_date": "2026-10-09"
+ },
+ {
+  "crop": "Tomato",
+  "qty_qtl": 10,
+  "district": "Nashik",
+  "condition": "poor",
+  "spoil_rate_per_day": 0.025,
+  "ready_date": "2026-10-09"
+ },
+ {
+  "crop": "Tomato",
+  "qty_qtl": 50,
+  "district": "Ahmednagar",
+  "condition": "fair",
+  "spoil_rate_per_day": 0.0103,
+  "ready_date": "2026-10-14"
+ },
+ {
+  "crop": "Wheat",
+  "qty_qtl": 50,
+  "district": "Nashik",
+  "condition": "good",
+  "spoil_rate_per_day": 0.0024,
+  "ready_date": "2026-10-08"
+ },
+ {
+  "crop": "Soyabean",
+  "qty_qtl": 10,
+  "district": "Pune",
+  "condition": "poor",
+  "spoil_rate_per_day": 0.019,
+  "ready_date": "2026-10-02"
+ },
+ {
+  "crop": "Onion",
+  "qty_qtl": 120,
+  "district": "Nashik",
+  "condition": "good",
+  "spoil_rate_per_day": 0.004,
+  "ready_date": "2026-10-07"
+ },
+ {
+  "crop": "Maize",
+  "qty_qtl": 120,
+  "district": "Ahmednagar",
+  "condition": "good",
+  "spoil_rate_per_day": 0.0022,
+  "ready_date": "2026-10-10"
+ },
+ {
+  "crop": "Wheat",
+  "qty_qtl": 120,
+  "district": "Nashik",
+  "condition": "good",
+  "spoil_rate_per_day": 0.0039,
+  "ready_date": "2026-10-11"
+ }
+]

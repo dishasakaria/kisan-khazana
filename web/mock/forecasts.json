@@ -1,0 +1,2882 @@
+[
+ {
+  "commodity": "Onion",
+  "market": "Lasalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1737,
+  "p50": 1737,
+  "p90": 1737
+ },
+ {
+  "commodity": "Onion",
+  "market": "Lasalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1483,
+  "p50": 1700,
+  "p90": 1918
+ },
+ {
+  "commodity": "Onion",
+  "market": "Lasalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1509,
+  "p50": 1724,
+  "p90": 1939
+ },
+ {
+  "commodity": "Onion",
+  "market": "Lasalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1463,
+  "p50": 1738,
+  "p90": 2012
+ },
+ {
+  "commodity": "Onion",
+  "market": "Pimpalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1810,
+  "p50": 1810,
+  "p90": 1810
+ },
+ {
+  "commodity": "Onion",
+  "market": "Pimpalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1599,
+  "p50": 1815,
+  "p90": 2031
+ },
+ {
+  "commodity": "Onion",
+  "market": "Pimpalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1630,
+  "p50": 1873,
+  "p90": 2117
+ },
+ {
+  "commodity": "Onion",
+  "market": "Pimpalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1457,
+  "p50": 1833,
+  "p90": 2209
+ },
+ {
+  "commodity": "Onion",
+  "market": "Pune",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2057,
+  "p50": 2057,
+  "p90": 2057
+ },
+ {
+  "commodity": "Onion",
+  "market": "Pune",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1713,
+  "p50": 2047,
+  "p90": 2380
+ },
+ {
+  "commodity": "Onion",
+  "market": "Pune",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1641,
+  "p50": 2022,
+  "p90": 2404
+ },
+ {
+  "commodity": "Onion",
+  "market": "Pune",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1706,
+  "p50": 2046,
+  "p90": 2387
+ },
+ {
+  "commodity": "Onion",
+  "market": "Sangamner",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1700,
+  "p50": 1700,
+  "p90": 1700
+ },
+ {
+  "commodity": "Onion",
+  "market": "Sangamner",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1565,
+  "p50": 1738,
+  "p90": 1911
+ },
+ {
+  "commodity": "Onion",
+  "market": "Sangamner",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1430,
+  "p50": 1726,
+  "p90": 2021
+ },
+ {
+  "commodity": "Onion",
+  "market": "Sangamner",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1374,
+  "p50": 1715,
+  "p90": 2056
+ },
+ {
+  "commodity": "Onion",
+  "market": "Yeola",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1661,
+  "p50": 1661,
+  "p90": 1661
+ },
+ {
+  "commodity": "Onion",
+  "market": "Yeola",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1441,
+  "p50": 1674,
+  "p90": 1908
+ },
+ {
+  "commodity": "Onion",
+  "market": "Yeola",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1447,
+  "p50": 1693,
+  "p90": 1938
+ },
+ {
+  "commodity": "Onion",
+  "market": "Yeola",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1381,
+  "p50": 1707,
+  "p90": 2033
+ },
+ {
+  "commodity": "Onion",
+  "market": "Kopargaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1808,
+  "p50": 1808,
+  "p90": 1808
+ },
+ {
+  "commodity": "Onion",
+  "market": "Kopargaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1616,
+  "p50": 1805,
+  "p90": 1994
+ },
+ {
+  "commodity": "Onion",
+  "market": "Kopargaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1508,
+  "p50": 1800,
+  "p90": 2091
+ },
+ {
+  "commodity": "Onion",
+  "market": "Kopargaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1436,
+  "p50": 1825,
+  "p90": 2214
+ },
+ {
+  "commodity": "Onion",
+  "market": "Ahmednagar",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1816,
+  "p50": 1816,
+  "p90": 1816
+ },
+ {
+  "commodity": "Onion",
+  "market": "Ahmednagar",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1550,
+  "p50": 1759,
+  "p90": 1967
+ },
+ {
+  "commodity": "Onion",
+  "market": "Ahmednagar",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1569,
+  "p50": 1808,
+  "p90": 2047
+ },
+ {
+  "commodity": "Onion",
+  "market": "Ahmednagar",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1509,
+  "p50": 1793,
+  "p90": 2076
+ },
+ {
+  "commodity": "Onion",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1957,
+  "p50": 1957,
+  "p90": 1957
+ },
+ {
+  "commodity": "Onion",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1645,
+  "p50": 1947,
+  "p90": 2248
+ },
+ {
+  "commodity": "Onion",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1592,
+  "p50": 1931,
+  "p90": 2270
+ },
+ {
+  "commodity": "Onion",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1562,
+  "p50": 1956,
+  "p90": 2350
+ },
+ {
+  "commodity": "Onion",
+  "market": "Rahata",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1876,
+  "p50": 1876,
+  "p90": 1876
+ },
+ {
+  "commodity": "Onion",
+  "market": "Rahata",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1655,
+  "p50": 1887,
+  "p90": 2120
+ },
+ {
+  "commodity": "Onion",
+  "market": "Rahata",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1637,
+  "p50": 1871,
+  "p90": 2104
+ },
+ {
+  "commodity": "Onion",
+  "market": "Rahata",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1489,
+  "p50": 1877,
+  "p90": 2265
+ },
+ {
+  "commodity": "Onion",
+  "market": "Manmad",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2096,
+  "p50": 2096,
+  "p90": 2096
+ },
+ {
+  "commodity": "Onion",
+  "market": "Manmad",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1818,
+  "p50": 2056,
+  "p90": 2294
+ },
+ {
+  "commodity": "Onion",
+  "market": "Manmad",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1837,
+  "p50": 2092,
+  "p90": 2347
+ },
+ {
+  "commodity": "Onion",
+  "market": "Manmad",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1729,
+  "p50": 2079,
+  "p90": 2429
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Lasalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1292,
+  "p50": 1292,
+  "p90": 1292
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Lasalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1099,
+  "p50": 1228,
+  "p90": 1356
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Lasalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 980,
+  "p50": 1209,
+  "p90": 1439
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Lasalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 940,
+  "p50": 1162,
+  "p90": 1384
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Pimpalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1451,
+  "p50": 1451,
+  "p90": 1451
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Pimpalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1194,
+  "p50": 1412,
+  "p90": 1630
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Pimpalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1140,
+  "p50": 1346,
+  "p90": 1552
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Pimpalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1018,
+  "p50": 1315,
+  "p90": 1612
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Pune",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1533,
+  "p50": 1533,
+  "p90": 1533
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Pune",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1341,
+  "p50": 1496,
+  "p90": 1651
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Pune",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1229,
+  "p50": 1461,
+  "p90": 1693
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Pune",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1191,
+  "p50": 1445,
+  "p90": 1699
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Sangamner",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1257,
+  "p50": 1257,
+  "p90": 1257
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Sangamner",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1064,
+  "p50": 1223,
+  "p90": 1383
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Sangamner",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1008,
+  "p50": 1222,
+  "p90": 1436
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Sangamner",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 929,
+  "p50": 1168,
+  "p90": 1407
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Yeola",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1442,
+  "p50": 1442,
+  "p90": 1442
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Yeola",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1241,
+  "p50": 1455,
+  "p90": 1670
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Yeola",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1157,
+  "p50": 1418,
+  "p90": 1678
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Yeola",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1100,
+  "p50": 1353,
+  "p90": 1606
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Kopargaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1299,
+  "p50": 1299,
+  "p90": 1299
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Kopargaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1125,
+  "p50": 1237,
+  "p90": 1349
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Kopargaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1052,
+  "p50": 1213,
+  "p90": 1374
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Kopargaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 999,
+  "p50": 1188,
+  "p90": 1377
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Ahmednagar",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1242,
+  "p50": 1242,
+  "p90": 1242
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Ahmednagar",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1071,
+  "p50": 1209,
+  "p90": 1347
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Ahmednagar",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 951,
+  "p50": 1174,
+  "p90": 1397
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Ahmednagar",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 977,
+  "p50": 1172,
+  "p90": 1368
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1330,
+  "p50": 1330,
+  "p90": 1330
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1174,
+  "p50": 1297,
+  "p90": 1420
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1033,
+  "p50": 1290,
+  "p90": 1547
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 997,
+  "p50": 1236,
+  "p90": 1476
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Rahata",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1266,
+  "p50": 1266,
+  "p90": 1266
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Rahata",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1114,
+  "p50": 1246,
+  "p90": 1379
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Rahata",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1075,
+  "p50": 1240,
+  "p90": 1404
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Rahata",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 897,
+  "p50": 1166,
+  "p90": 1436
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Manmad",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1403,
+  "p50": 1403,
+  "p90": 1403
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Manmad",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1269,
+  "p50": 1390,
+  "p90": 1511
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Manmad",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1085,
+  "p50": 1354,
+  "p90": 1622
+ },
+ {
+  "commodity": "Tomato",
+  "market": "Manmad",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1056,
+  "p50": 1338,
+  "p90": 1619
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Lasalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 4306,
+  "p50": 4306,
+  "p90": 4306
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Lasalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 3825,
+  "p50": 4385,
+  "p90": 4945
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Lasalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 3722,
+  "p50": 4360,
+  "p90": 4998
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Lasalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 3305,
+  "p50": 4236,
+  "p90": 5168
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Pimpalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 5039,
+  "p50": 5039,
+  "p90": 5039
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Pimpalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 4248,
+  "p50": 5000,
+  "p90": 5752
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Pimpalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 4272,
+  "p50": 4957,
+  "p90": 5641
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Pimpalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 3987,
+  "p50": 4882,
+  "p90": 5778
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Pune",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 3957,
+  "p50": 3957,
+  "p90": 3957
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Pune",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 3553,
+  "p50": 3973,
+  "p90": 4393
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Pune",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 3226,
+  "p50": 4016,
+  "p90": 4805
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Pune",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 3043,
+  "p50": 3952,
+  "p90": 4860
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Sangamner",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 5063,
+  "p50": 5063,
+  "p90": 5063
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Sangamner",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 4411,
+  "p50": 4915,
+  "p90": 5420
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Sangamner",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 4198,
+  "p50": 4858,
+  "p90": 5517
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Sangamner",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 3835,
+  "p50": 4823,
+  "p90": 5812
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Yeola",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 4953,
+  "p50": 4953,
+  "p90": 4953
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Yeola",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 4187,
+  "p50": 4853,
+  "p90": 5519
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Yeola",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 4266,
+  "p50": 4886,
+  "p90": 5505
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Yeola",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 3729,
+  "p50": 4829,
+  "p90": 5929
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Kopargaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 4819,
+  "p50": 4819,
+  "p90": 4819
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Kopargaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 4267,
+  "p50": 4738,
+  "p90": 5208
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Kopargaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 4069,
+  "p50": 4768,
+  "p90": 5467
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Kopargaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 3638,
+  "p50": 4742,
+  "p90": 5845
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Ahmednagar",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 4375,
+  "p50": 4375,
+  "p90": 4375
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Ahmednagar",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 3809,
+  "p50": 4444,
+  "p90": 5080
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Ahmednagar",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 3724,
+  "p50": 4281,
+  "p90": 4839
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Ahmednagar",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 3285,
+  "p50": 4251,
+  "p90": 5218
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 4727,
+  "p50": 4727,
+  "p90": 4727
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 4039,
+  "p50": 4828,
+  "p90": 5617
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 4061,
+  "p50": 4767,
+  "p90": 5472
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 3936,
+  "p50": 4717,
+  "p90": 5497
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Rahata",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 4095,
+  "p50": 4095,
+  "p90": 4095
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Rahata",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 3508,
+  "p50": 4019,
+  "p90": 4530
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Rahata",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 3415,
+  "p50": 4040,
+  "p90": 4665
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Rahata",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 3120,
+  "p50": 4006,
+  "p90": 4891
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Manmad",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 4170,
+  "p50": 4170,
+  "p90": 4170
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Manmad",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 3718,
+  "p50": 4151,
+  "p90": 4584
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Manmad",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 3588,
+  "p50": 4175,
+  "p90": 4763
+ },
+ {
+  "commodity": "Soyabean",
+  "market": "Manmad",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 3439,
+  "p50": 4121,
+  "p90": 4804
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Lasalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2587,
+  "p50": 2587,
+  "p90": 2587
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Lasalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 2362,
+  "p50": 2803,
+  "p90": 3244
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Lasalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 2411,
+  "p50": 2989,
+  "p90": 3567
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Lasalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 2568,
+  "p50": 3200,
+  "p90": 3832
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Pimpalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2638,
+  "p50": 2638,
+  "p90": 2638
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Pimpalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 2606,
+  "p50": 2894,
+  "p90": 3183
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Pimpalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 2496,
+  "p50": 3058,
+  "p90": 3621
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Pimpalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 2653,
+  "p50": 3287,
+  "p90": 3921
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Pune",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2814,
+  "p50": 2814,
+  "p90": 2814
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Pune",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 2628,
+  "p50": 3008,
+  "p90": 3389
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Pune",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 2659,
+  "p50": 3254,
+  "p90": 3848
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Pune",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 2739,
+  "p50": 3423,
+  "p90": 4107
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Sangamner",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2507,
+  "p50": 2507,
+  "p90": 2507
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Sangamner",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 2409,
+  "p50": 2756,
+  "p90": 3102
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Sangamner",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 2402,
+  "p50": 2932,
+  "p90": 3462
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Sangamner",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 2563,
+  "p50": 3166,
+  "p90": 3769
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Yeola",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2743,
+  "p50": 2743,
+  "p90": 2743
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Yeola",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 2543,
+  "p50": 2958,
+  "p90": 3374
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Yeola",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 2651,
+  "p50": 3166,
+  "p90": 3681
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Yeola",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 2604,
+  "p50": 3384,
+  "p90": 4163
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Kopargaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2835,
+  "p50": 2835,
+  "p90": 2835
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Kopargaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 2737,
+  "p50": 3061,
+  "p90": 3384
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Kopargaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 2604,
+  "p50": 3237,
+  "p90": 3869
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Kopargaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 2908,
+  "p50": 3487,
+  "p90": 4065
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Ahmednagar",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2450,
+  "p50": 2450,
+  "p90": 2450
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Ahmednagar",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 2335,
+  "p50": 2606,
+  "p90": 2878
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Ahmednagar",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 2313,
+  "p50": 2799,
+  "p90": 3284
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Ahmednagar",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 2367,
+  "p50": 3061,
+  "p90": 3755
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2496,
+  "p50": 2496,
+  "p90": 2496
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 2426,
+  "p50": 2685,
+  "p90": 2944
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 2328,
+  "p50": 2901,
+  "p90": 3473
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 2328,
+  "p50": 3029,
+  "p90": 3729
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Rahata",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2616,
+  "p50": 2616,
+  "p90": 2616
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Rahata",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 2438,
+  "p50": 2873,
+  "p90": 3309
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Rahata",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 2529,
+  "p50": 2992,
+  "p90": 3454
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Rahata",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 2645,
+  "p50": 3234,
+  "p90": 3823
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Manmad",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2481,
+  "p50": 2481,
+  "p90": 2481
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Manmad",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 2482,
+  "p50": 2717,
+  "p90": 2952
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Manmad",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 2446,
+  "p50": 2896,
+  "p90": 3345
+ },
+ {
+  "commodity": "Wheat",
+  "market": "Manmad",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 2487,
+  "p50": 3038,
+  "p90": 3589
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Lasalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 5572,
+  "p50": 5572,
+  "p90": 5572
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Lasalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 5124,
+  "p50": 6014,
+  "p90": 6905
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Lasalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 5443,
+  "p50": 6244,
+  "p90": 7046
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Lasalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 5318,
+  "p50": 6317,
+  "p90": 7317
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Pimpalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 5945,
+  "p50": 5945,
+  "p90": 5945
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Pimpalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 5426,
+  "p50": 6157,
+  "p90": 6889
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Pimpalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 5369,
+  "p50": 6592,
+  "p90": 7815
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Pimpalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 5566,
+  "p50": 6682,
+  "p90": 7797
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Pune",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 6190,
+  "p50": 6190,
+  "p90": 6190
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Pune",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 5879,
+  "p50": 6476,
+  "p90": 7072
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Pune",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 5420,
+  "p50": 6571,
+  "p90": 7721
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Pune",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 5803,
+  "p50": 6915,
+  "p90": 8027
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Sangamner",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 6229,
+  "p50": 6229,
+  "p90": 6229
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Sangamner",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 5927,
+  "p50": 6526,
+  "p90": 7124
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Sangamner",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 5942,
+  "p50": 6794,
+  "p90": 7645
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Sangamner",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 5701,
+  "p50": 7050,
+  "p90": 8399
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Yeola",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 5469,
+  "p50": 5469,
+  "p90": 5469
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Yeola",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 5161,
+  "p50": 5775,
+  "p90": 6390
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Yeola",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 4881,
+  "p50": 5826,
+  "p90": 6770
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Yeola",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 5079,
+  "p50": 6074,
+  "p90": 7068
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Kopargaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 5145,
+  "p50": 5145,
+  "p90": 5145
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Kopargaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 4799,
+  "p50": 5392,
+  "p90": 5985
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Kopargaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 4611,
+  "p50": 5629,
+  "p90": 6646
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Kopargaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 4702,
+  "p50": 5841,
+  "p90": 6980
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Ahmednagar",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 5227,
+  "p50": 5227,
+  "p90": 5227
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Ahmednagar",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 4810,
+  "p50": 5374,
+  "p90": 5938
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Ahmednagar",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 4591,
+  "p50": 5590,
+  "p90": 6588
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Ahmednagar",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 4911,
+  "p50": 5919,
+  "p90": 6926
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 5723,
+  "p50": 5723,
+  "p90": 5723
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 4899,
+  "p50": 5768,
+  "p90": 6636
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 5103,
+  "p50": 6072,
+  "p90": 7041
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 5202,
+  "p50": 6394,
+  "p90": 7586
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Rahata",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 5707,
+  "p50": 5707,
+  "p90": 5707
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Rahata",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 5331,
+  "p50": 6006,
+  "p90": 6682
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Rahata",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 5110,
+  "p50": 6205,
+  "p90": 7301
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Rahata",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 5196,
+  "p50": 6394,
+  "p90": 7592
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Manmad",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 5371,
+  "p50": 5371,
+  "p90": 5371
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Manmad",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 5103,
+  "p50": 5612,
+  "p90": 6121
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Manmad",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 5132,
+  "p50": 5970,
+  "p90": 6809
+ },
+ {
+  "commodity": "Bengal Gram (Gram)(Whole)",
+  "market": "Manmad",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 5087,
+  "p50": 6069,
+  "p90": 7051
+ },
+ {
+  "commodity": "Potato",
+  "market": "Lasalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1923,
+  "p50": 1923,
+  "p90": 1923
+ },
+ {
+  "commodity": "Potato",
+  "market": "Lasalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1815,
+  "p50": 2026,
+  "p90": 2237
+ },
+ {
+  "commodity": "Potato",
+  "market": "Lasalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1821,
+  "p50": 2159,
+  "p90": 2498
+ },
+ {
+  "commodity": "Potato",
+  "market": "Lasalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1846,
+  "p50": 2281,
+  "p90": 2716
+ },
+ {
+  "commodity": "Potato",
+  "market": "Pimpalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1707,
+  "p50": 1707,
+  "p90": 1707
+ },
+ {
+  "commodity": "Potato",
+  "market": "Pimpalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1589,
+  "p50": 1824,
+  "p90": 2059
+ },
+ {
+  "commodity": "Potato",
+  "market": "Pimpalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1519,
+  "p50": 1892,
+  "p90": 2265
+ },
+ {
+  "commodity": "Potato",
+  "market": "Pimpalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1643,
+  "p50": 2012,
+  "p90": 2382
+ },
+ {
+  "commodity": "Potato",
+  "market": "Pune",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1568,
+  "p50": 1568,
+  "p90": 1568
+ },
+ {
+  "commodity": "Potato",
+  "market": "Pune",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1472,
+  "p50": 1683,
+  "p90": 1894
+ },
+ {
+  "commodity": "Potato",
+  "market": "Pune",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1490,
+  "p50": 1775,
+  "p90": 2060
+ },
+ {
+  "commodity": "Potato",
+  "market": "Pune",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1542,
+  "p50": 1872,
+  "p90": 2202
+ },
+ {
+  "commodity": "Potato",
+  "market": "Sangamner",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1603,
+  "p50": 1603,
+  "p90": 1603
+ },
+ {
+  "commodity": "Potato",
+  "market": "Sangamner",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1545,
+  "p50": 1692,
+  "p90": 1839
+ },
+ {
+  "commodity": "Potato",
+  "market": "Sangamner",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1568,
+  "p50": 1820,
+  "p90": 2073
+ },
+ {
+  "commodity": "Potato",
+  "market": "Sangamner",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1565,
+  "p50": 1950,
+  "p90": 2335
+ },
+ {
+  "commodity": "Potato",
+  "market": "Yeola",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1876,
+  "p50": 1876,
+  "p90": 1876
+ },
+ {
+  "commodity": "Potato",
+  "market": "Yeola",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1697,
+  "p50": 2009,
+  "p90": 2321
+ },
+ {
+  "commodity": "Potato",
+  "market": "Yeola",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1805,
+  "p50": 2114,
+  "p90": 2423
+ },
+ {
+  "commodity": "Potato",
+  "market": "Yeola",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1906,
+  "p50": 2288,
+  "p90": 2670
+ },
+ {
+  "commodity": "Potato",
+  "market": "Kopargaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1864,
+  "p50": 1864,
+  "p90": 1864
+ },
+ {
+  "commodity": "Potato",
+  "market": "Kopargaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1653,
+  "p50": 1949,
+  "p90": 2244
+ },
+ {
+  "commodity": "Potato",
+  "market": "Kopargaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1776,
+  "p50": 2140,
+  "p90": 2504
+ },
+ {
+  "commodity": "Potato",
+  "market": "Kopargaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1760,
+  "p50": 2257,
+  "p90": 2753
+ },
+ {
+  "commodity": "Potato",
+  "market": "Ahmednagar",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1630,
+  "p50": 1630,
+  "p90": 1630
+ },
+ {
+  "commodity": "Potato",
+  "market": "Ahmednagar",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1477,
+  "p50": 1742,
+  "p90": 2006
+ },
+ {
+  "commodity": "Potato",
+  "market": "Ahmednagar",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1526,
+  "p50": 1874,
+  "p90": 2223
+ },
+ {
+  "commodity": "Potato",
+  "market": "Ahmednagar",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1526,
+  "p50": 1973,
+  "p90": 2420
+ },
+ {
+  "commodity": "Potato",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1852,
+  "p50": 1852,
+  "p90": 1852
+ },
+ {
+  "commodity": "Potato",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1775,
+  "p50": 1946,
+  "p90": 2116
+ },
+ {
+  "commodity": "Potato",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1758,
+  "p50": 2066,
+  "p90": 2373
+ },
+ {
+  "commodity": "Potato",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1705,
+  "p50": 2191,
+  "p90": 2678
+ },
+ {
+  "commodity": "Potato",
+  "market": "Rahata",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1799,
+  "p50": 1799,
+  "p90": 1799
+ },
+ {
+  "commodity": "Potato",
+  "market": "Rahata",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1655,
+  "p50": 1923,
+  "p90": 2191
+ },
+ {
+  "commodity": "Potato",
+  "market": "Rahata",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1793,
+  "p50": 2038,
+  "p90": 2283
+ },
+ {
+  "commodity": "Potato",
+  "market": "Rahata",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1715,
+  "p50": 2184,
+  "p90": 2653
+ },
+ {
+  "commodity": "Potato",
+  "market": "Manmad",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1771,
+  "p50": 1771,
+  "p90": 1771
+ },
+ {
+  "commodity": "Potato",
+  "market": "Manmad",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1731,
+  "p50": 1903,
+  "p90": 2074
+ },
+ {
+  "commodity": "Potato",
+  "market": "Manmad",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1746,
+  "p50": 2031,
+  "p90": 2315
+ },
+ {
+  "commodity": "Potato",
+  "market": "Manmad",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1735,
+  "p50": 2107,
+  "p90": 2478
+ },
+ {
+  "commodity": "Maize",
+  "market": "Lasalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2052,
+  "p50": 2052,
+  "p90": 2052
+ },
+ {
+  "commodity": "Maize",
+  "market": "Lasalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1910,
+  "p50": 2182,
+  "p90": 2454
+ },
+ {
+  "commodity": "Maize",
+  "market": "Lasalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1890,
+  "p50": 2245,
+  "p90": 2601
+ },
+ {
+  "commodity": "Maize",
+  "market": "Lasalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1866,
+  "p50": 2381,
+  "p90": 2896
+ },
+ {
+  "commodity": "Maize",
+  "market": "Pimpalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2240,
+  "p50": 2240,
+  "p90": 2240
+ },
+ {
+  "commodity": "Maize",
+  "market": "Pimpalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 2088,
+  "p50": 2311,
+  "p90": 2535
+ },
+ {
+  "commodity": "Maize",
+  "market": "Pimpalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 2010,
+  "p50": 2449,
+  "p90": 2889
+ },
+ {
+  "commodity": "Maize",
+  "market": "Pimpalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 2059,
+  "p50": 2576,
+  "p90": 3092
+ },
+ {
+  "commodity": "Maize",
+  "market": "Pune",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 1907,
+  "p50": 1907,
+  "p90": 1907
+ },
+ {
+  "commodity": "Maize",
+  "market": "Pune",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1748,
+  "p50": 2029,
+  "p90": 2311
+ },
+ {
+  "commodity": "Maize",
+  "market": "Pune",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1791,
+  "p50": 2169,
+  "p90": 2546
+ },
+ {
+  "commodity": "Maize",
+  "market": "Pune",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1803,
+  "p50": 2244,
+  "p90": 2684
+ },
+ {
+  "commodity": "Maize",
+  "market": "Sangamner",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2152,
+  "p50": 2152,
+  "p90": 2152
+ },
+ {
+  "commodity": "Maize",
+  "market": "Sangamner",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1889,
+  "p50": 2240,
+  "p90": 2591
+ },
+ {
+  "commodity": "Maize",
+  "market": "Sangamner",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1896,
+  "p50": 2365,
+  "p90": 2834
+ },
+ {
+  "commodity": "Maize",
+  "market": "Sangamner",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 2148,
+  "p50": 2547,
+  "p90": 2945
+ },
+ {
+  "commodity": "Maize",
+  "market": "Yeola",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2180,
+  "p50": 2180,
+  "p90": 2180
+ },
+ {
+  "commodity": "Maize",
+  "market": "Yeola",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 2031,
+  "p50": 2310,
+  "p90": 2590
+ },
+ {
+  "commodity": "Maize",
+  "market": "Yeola",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 2044,
+  "p50": 2368,
+  "p90": 2692
+ },
+ {
+  "commodity": "Maize",
+  "market": "Yeola",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 2107,
+  "p50": 2544,
+  "p90": 2982
+ },
+ {
+  "commodity": "Maize",
+  "market": "Kopargaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2178,
+  "p50": 2178,
+  "p90": 2178
+ },
+ {
+  "commodity": "Maize",
+  "market": "Kopargaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1957,
+  "p50": 2333,
+  "p90": 2709
+ },
+ {
+  "commodity": "Maize",
+  "market": "Kopargaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1971,
+  "p50": 2420,
+  "p90": 2869
+ },
+ {
+  "commodity": "Maize",
+  "market": "Kopargaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1993,
+  "p50": 2574,
+  "p90": 3156
+ },
+ {
+  "commodity": "Maize",
+  "market": "Ahmednagar",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2243,
+  "p50": 2243,
+  "p90": 2243
+ },
+ {
+  "commodity": "Maize",
+  "market": "Ahmednagar",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 2127,
+  "p50": 2428,
+  "p90": 2729
+ },
+ {
+  "commodity": "Maize",
+  "market": "Ahmednagar",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 2176,
+  "p50": 2473,
+  "p90": 2771
+ },
+ {
+  "commodity": "Maize",
+  "market": "Ahmednagar",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 2135,
+  "p50": 2640,
+  "p90": 3144
+ },
+ {
+  "commodity": "Maize",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2048,
+  "p50": 2048,
+  "p90": 2048
+ },
+ {
+  "commodity": "Maize",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1938,
+  "p50": 2179,
+  "p90": 2419
+ },
+ {
+  "commodity": "Maize",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 2053,
+  "p50": 2334,
+  "p90": 2614
+ },
+ {
+  "commodity": "Maize",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1898,
+  "p50": 2440,
+  "p90": 2982
+ },
+ {
+  "commodity": "Maize",
+  "market": "Rahata",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2026,
+  "p50": 2026,
+  "p90": 2026
+ },
+ {
+  "commodity": "Maize",
+  "market": "Rahata",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 1785,
+  "p50": 2118,
+  "p90": 2451
+ },
+ {
+  "commodity": "Maize",
+  "market": "Rahata",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 1865,
+  "p50": 2193,
+  "p90": 2522
+ },
+ {
+  "commodity": "Maize",
+  "market": "Rahata",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 1768,
+  "p50": 2311,
+  "p90": 2854
+ },
+ {
+  "commodity": "Maize",
+  "market": "Manmad",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 2201,
+  "p50": 2201,
+  "p90": 2201
+ },
+ {
+  "commodity": "Maize",
+  "market": "Manmad",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 2079,
+  "p50": 2329,
+  "p90": 2578
+ },
+ {
+  "commodity": "Maize",
+  "market": "Manmad",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 2107,
+  "p50": 2416,
+  "p90": 2726
+ },
+ {
+  "commodity": "Maize",
+  "market": "Manmad",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 2144,
+  "p50": 2607,
+  "p90": 3071
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Lasalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 6811,
+  "p50": 6811,
+  "p90": 6811
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Lasalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 6694,
+  "p50": 7439,
+  "p90": 8184
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Lasalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 6398,
+  "p50": 7962,
+  "p90": 9527
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Lasalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 6758,
+  "p50": 8664,
+  "p90": 10570
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Pimpalgaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 7603,
+  "p50": 7603,
+  "p90": 7603
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Pimpalgaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 7162,
+  "p50": 8222,
+  "p90": 9282
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Pimpalgaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 7679,
+  "p50": 8766,
+  "p90": 9853
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Pimpalgaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 7588,
+  "p50": 9380,
+  "p90": 11173
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Pune",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 7717,
+  "p50": 7717,
+  "p90": 7717
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Pune",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 7501,
+  "p50": 8233,
+  "p90": 8965
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Pune",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 7877,
+  "p50": 9056,
+  "p90": 10235
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Pune",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 7801,
+  "p50": 9542,
+  "p90": 11284
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Sangamner",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 7018,
+  "p50": 7018,
+  "p90": 7018
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Sangamner",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 6842,
+  "p50": 7652,
+  "p90": 8461
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Sangamner",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 6959,
+  "p50": 8130,
+  "p90": 9301
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Sangamner",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 7053,
+  "p50": 8670,
+  "p90": 10287
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Yeola",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 6654,
+  "p50": 6654,
+  "p90": 6654
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Yeola",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 6080,
+  "p50": 7217,
+  "p90": 8353
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Yeola",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 6766,
+  "p50": 7845,
+  "p90": 8925
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Yeola",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 6510,
+  "p50": 8506,
+  "p90": 10503
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Kopargaon",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 7089,
+  "p50": 7089,
+  "p90": 7089
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Kopargaon",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 6982,
+  "p50": 7691,
+  "p90": 8401
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Kopargaon",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 7262,
+  "p50": 8322,
+  "p90": 9381
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Kopargaon",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 7319,
+  "p50": 8879,
+  "p90": 10439
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Ahmednagar",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 7497,
+  "p50": 7497,
+  "p90": 7497
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Ahmednagar",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 7107,
+  "p50": 8059,
+  "p90": 9010
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Ahmednagar",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 7176,
+  "p50": 8562,
+  "p90": 9949
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Ahmednagar",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 7487,
+  "p50": 9154,
+  "p90": 10820
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 6520,
+  "p50": 6520,
+  "p90": 6520
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 6550,
+  "p50": 7238,
+  "p90": 7926
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 6349,
+  "p50": 7653,
+  "p90": 8957
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Junnar (Narayangaon)",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 6857,
+  "p50": 8285,
+  "p90": 9712
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Rahata",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 6840,
+  "p50": 6840,
+  "p90": 6840
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Rahata",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 6547,
+  "p50": 7446,
+  "p90": 8344
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Rahata",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 6629,
+  "p50": 8163,
+  "p90": 9696
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Rahata",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 7340,
+  "p50": 8704,
+  "p90": 10069
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Manmad",
+  "horizon_days": 0,
+  "target_date": "2026-10-02",
+  "p10": 6586,
+  "p50": 6586,
+  "p90": 6586
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Manmad",
+  "horizon_days": 7,
+  "target_date": "2026-10-09",
+  "p10": 6287,
+  "p50": 7168,
+  "p90": 8048
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Manmad",
+  "horizon_days": 14,
+  "target_date": "2026-10-16",
+  "p10": 6706,
+  "p50": 7620,
+  "p90": 8535
+ },
+ {
+  "commodity": "Pomegranate",
+  "market": "Manmad",
+  "horizon_days": 21,
+  "target_date": "2026-10-23",
+  "p10": 6246,
+  "p50": 8102,
+  "p90": 9959
+ }
+]

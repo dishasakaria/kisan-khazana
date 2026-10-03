@@ -1,0 +1,32 @@
+{
+ "mr": [
+  "टेलिग्राम उघडा. सेल स्मार्ट किसान बॉट शोधा, आणि स्टार्ट दाबा.",
+  "बॉट तुमचे नाव विचारेल. भाषा निवडा, आणि तुमचे नाव लिहून पाठवा.",
+  "माझे ठिकाण पाठवा, हे बटण दाबा. किंवा सहा अंकी पिनकोड लिहा.",
+  "कोणते पीक विकायचे आहे, त्याचे बटण दाबा. जसे, कांदा.",
+  "आता, किती क्विंटल माल आहे, ते निवडा.",
+  "बॉट सांगेल, कोणत्या बाजारात विकल्यावर, ट्रक भाडे आणि हमाली वजा करून, तुमच्या हातात सर्वात जास्त पैसे येतील.",
+  "तुम्ही बोलूनही विचारू शकता. साठवलेल्या मालाचा फोटो पाठवा, तो किती दिवस टिकेल ते आम्ही सांगू.",
+  "निर्णय तुमचा. माहिती आमची. आजच सुरू करा!"
+ ],
+ "hi": [
+  "टेलीग्राम खोलिए. सेल स्मार्ट किसान बॉट खोजिए, और स्टार्ट दबाइए.",
+  "बॉट आपका नाम पूछेगा. भाषा चुनिए, और अपना नाम लिखकर भेजिए.",
+  "मेरा स्थान भेजें, यह बटन दबाइए. या छह अंकों का पिनकोड लिखिए.",
+  "कौन सी फसल बेचनी है, उसका बटन दबाइए. जैसे, प्याज़.",
+  "अब, कितने क्विंटल माल है, वह चुनिए.",
+  "बॉट बताएगा कि किस मंडी में बेचने पर, ट्रक भाड़ा और हमाली काटकर, आपके हाथ में सबसे ज़्यादा पैसा आएगा.",
+  "आप बोलकर भी पूछ सकते हैं. रखे हुए माल की फोटो भेजिए, वह कितने दिन टिकेगा, हम बताएँगे.",
+  "फ़ैसला आपका. जानकारी हमारी. आज ही शुरू कीजिए!"
+ ],
+ "en": [
+  "Open Telegram. Search for Sell Smart Kisan Bot, and tap Start.",
+  "The bot will ask your name. Choose your language, and type your name.",
+  "Tap the button, send my location. Or type your six digit pincode.",
+  "Tap the crop you want to sell. For example, onion.",
+  "Now choose how many quintals you have.",
+  "The bot tells you which market gives the most money in your hand, after truck rent and loading charges.",
+  "You can also ask by voice. Send a photo of your stored crop, and we will tell you how many days it will last.",
+  "Your decision. Our information. Start today!"
+ ]
+}

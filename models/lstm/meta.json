@@ -1,0 +1,150 @@
+{
+ "horizons": [
+  7,
+  14,
+  21
+ ],
+ "quantiles": [
+  0.1,
+  0.5,
+  0.9
+ ],
+ "config": {
+  "seq_len": 60,
+  "hidden": 64,
+  "layers": 1,
+  "stride": 3,
+  "seed": 0,
+  "batch": 1024,
+  "lr": 0.002,
+  "patience": 4,
+  "epochs_run": 20,
+  "train_windows": 153034,
+  "device": "cpu",
+  "train_seconds": 241,
+  "total_seconds": 249,
+  "best_valid_pinball": 0.059140074998140335
+ },
+ "results": {
+  "7": {
+   "lstm": 15.945744514465332,
+   "same_price": 17.396814346313477,
+   "coverage_10_90": 80.10731363345893,
+   "test_rows": 90762,
+   "by_crop": {
+    "Onion": {
+     "lstm": 12.3,
+     "same_price": 11.5
+    },
+    "Tomato": {
+     "lstm": 22.4,
+     "same_price": 23.8
+    },
+    "Soyabean": {
+     "lstm": 2.5,
+     "same_price": 2.6
+    },
+    "Wheat": {
+     "lstm": 3.4,
+     "same_price": 3.8
+    },
+    "Bengal Gram (Gram)(Whole)": {
+     "lstm": 4.5,
+     "same_price": 5.1
+    },
+    "Potato": {
+     "lstm": 9.5,
+     "same_price": 10.4
+    },
+    "Maize": {
+     "lstm": 4.3,
+     "same_price": 4.7
+    },
+    "Pomegranate": {
+     "lstm": 14.4,
+     "same_price": 15.8
+    }
+   }
+  },
+  "14": {
+   "lstm": 18.847871780395508,
+   "same_price": 21.049734115600586,
+   "coverage_10_90": 80.84485458991088,
+   "test_rows": 88749,
+   "by_crop": {
+    "Onion": {
+     "lstm": 16.5,
+     "same_price": 15.0
+    },
+    "Tomato": {
+     "lstm": 26.8,
+     "same_price": 28.8
+    },
+    "Soyabean": {
+     "lstm": 3.4,
+     "same_price": 3.4
+    },
+    "Wheat": {
+     "lstm": 3.8,
+     "same_price": 4.4
+    },
+    "Bengal Gram (Gram)(Whole)": {
+     "lstm": 4.9,
+     "same_price": 5.7
+    },
+    "Potato": {
+     "lstm": 10.9,
+     "same_price": 11.8
+    },
+    "Maize": {
+     "lstm": 4.9,
+     "same_price": 5.4
+    },
+    "Pomegranate": {
+     "lstm": 14.8,
+     "same_price": 15.8
+    }
+   }
+  },
+  "21": {
+   "lstm": 21.381620407104492,
+   "same_price": 23.652877807617188,
+   "coverage_10_90": 80.76936450352925,
+   "test_rows": 86279,
+   "by_crop": {
+    "Onion": {
+     "lstm": 20.1,
+     "same_price": 18.0
+    },
+    "Tomato": {
+     "lstm": 29.5,
+     "same_price": 32.6
+    },
+    "Soyabean": {
+     "lstm": 4.0,
+     "same_price": 4.0
+    },
+    "Wheat": {
+     "lstm": 4.0,
+     "same_price": 4.7
+    },
+    "Bengal Gram (Gram)(Whole)": {
+     "lstm": 5.3,
+     "same_price": 5.8
+    },
+    "Potato": {
+     "lstm": 11.7,
+     "same_price": 12.6
+    },
+    "Maize": {
+     "lstm": 5.3,
+     "same_price": 5.5
+    },
+    "Pomegranate": {
+     "lstm": 17.7,
+     "same_price": 18.4
+    }
+   }
+  }
+ }
+}

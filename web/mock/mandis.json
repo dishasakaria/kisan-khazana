@@ -1,0 +1,82 @@
+[
+ {
+  "market": "Lasalgaon",
+  "district": "Nashik",
+  "lat": 20.1427,
+  "lon": 74.2378,
+  "name_mr": "लासलगाव",
+  "name_hi": "लासलगांव"
+ },
+ {
+  "market": "Pimpalgaon",
+  "district": "Nashik",
+  "lat": 20.1634,
+  "lon": 73.9851,
+  "name_mr": "पिंपळगाव",
+  "name_hi": "पिंपलगांव"
+ },
+ {
+  "market": "Pune",
+  "district": "Pune",
+  "lat": 18.5214,
+  "lon": 73.8545,
+  "name_mr": "पुणे",
+  "name_hi": "पुणे"
+ },
+ {
+  "market": "Sangamner",
+  "district": "Ahmednagar",
+  "lat": 19.5742,
+  "lon": 74.2056,
+  "name_mr": "संगमनेर",
+  "name_hi": "संगमनेर"
+ },
+ {
+  "market": "Yeola",
+  "district": "Nashik",
+  "lat": 20.0429,
+  "lon": 74.488,
+  "name_mr": "येवला",
+  "name_hi": "येवला"
+ },
+ {
+  "market": "Kopargaon",
+  "district": "Ahmednagar",
+  "lat": 19.8895,
+  "lon": 74.4587,
+  "name_mr": "कोपरगाव",
+  "name_hi": "कोपरगांव"
+ },
+ {
+  "market": "Ahmednagar",
+  "district": "Ahmednagar",
+  "lat": 19.093,
+  "lon": 74.7493,
+  "name_mr": "अहमदनगर",
+  "name_hi": "अहमदनगर"
+ },
+ {
+  "market": "Junnar (Narayangaon)",
+  "district": "Pune",
+  "lat": 19.1203,
+  "lon": 73.9733,
+  "name_mr": "जुन्नर (नारायणगाव)",
+  "name_hi": "जुन्नर (नारायणगांव)"
+ },
+ {
+  "market": "Rahata",
+  "district": "Ahmednagar",
+  "lat": 19.7081,
+  "lon": 74.4797,
+  "name_mr": "राहाता",
+  "name_hi": "राहाता"
+ },
+ {
+  "market": "Manmad",
+  "district": "Nashik",
+  "lat": 20.2502,
+  "lon": 74.4394,
+  "name_mr": "मनमाड",
+  "name_hi": "मनमाड"
+ }
+]
